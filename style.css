@@ -1,0 +1,60 @@
+/* src/scss/style.scss */
+/*!
+Theme Name: Mroya Child
+Theme URI: https://mroya.eu/portfolio/mroya/
+Author: Uladzimir Kulesh
+Author URI: https://mroya.eu/
+Description: Mroya Child Theme.
+Template: mroya
+Requires at least: 6.7
+Tested up to: 7.1
+Requires PHP: 7.2
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Text Domain: mroya-child
+Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-site-editing, block-patterns, sticky-post, threaded-comments, translation-ready, block-styles, style-variations, blog
+*/
+.header--default > .wp-block-group.is-layout-grid {
+  grid-template-columns: repeat(2, minmax(0, auto));
+  row-gap: 0;
+}
+@media only screen and (min-width: 783px) {
+  .header--default > .wp-block-group.is-layout-grid {
+    grid-template-columns: 1fr auto 1fr;
+  }
+}
+@media only screen and (max-width: 782px) {
+  .header--default .wp-block-navigation {
+    justify-content: flex-end;
+  }
+}
+.header--default .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+  line-height: var(--wp--custom--typography--line-height--small, inherit);
+}
+.header.has-overlaid-colors .header--default {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+}
+.header.has-overlaid-colors .header--default a {
+  color: rgb(255, 255, 255);
+}
+.header.has-overlaid-colors .header--default .wp-element-button,
+.header.has-overlaid-colors .header--default .wp-block-button__link {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: transparent;
+  backdrop-filter: blur(8px);
+}
+.header.has-overlaid-colors .header--default .wp-element-button:hover,
+.header.has-overlaid-colors .header--default .wp-element-button:focus,
+.header.has-overlaid-colors .header--default .wp-element-button:active,
+.header.has-overlaid-colors .header--default .wp-block-button__link:hover,
+.header.has-overlaid-colors .header--default .wp-block-button__link:focus,
+.header.has-overlaid-colors .header--default .wp-block-button__link:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+@media only screen and (max-width: 782px) {
+  .section--services .services-list__item::after {
+    display: none;
+  }
+}
