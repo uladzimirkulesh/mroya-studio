@@ -1,7 +1,7 @@
 {
-  "name": "mroya-child",
+  "name": "mroya-studio",
   "version": "1.0.0",
-  "description": "Mroya Child WordPress Theme",
+  "description": "Mroya Studio WordPress Theme",
   "author": "Uladzimir Kulesh",
   "license": "GPL-2.0-or-later",
   "keywords": [
@@ -9,12 +9,12 @@
     "Theme"
   ],
   "bugs": {
-    "url": "https://github.com/uladzimirkulesh/mroya-child/issues"
+    "url": "https://github.com/uladzimirkulesh/mroya-studio/issues"
   },
-  "homepage": "https://github.com/uladzimirkulesh/mroya-child#readme",
+  "homepage": "https://github.com/uladzimirkulesh/mroya-studio#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uladzimirkulesh/mroya-child.git"
+    "url": "git+https://github.com/uladzimirkulesh/mroya-studio.git"
   },
   "type": "module",
   "scripts": {
