@@ -95,7 +95,7 @@ add_action( 'wp_enqueue_scripts', 'mroya_studio_assets' );
 /**
  * Enqueues editor styles
  *
- * @since Mroya 1.0.0
+ * @since Mroya Studio 1.0.0
  *
  * @return void
  */
@@ -111,3 +111,57 @@ function mroya_studio_editor_style() {
 	add_editor_style( $editor_styles );
 }
 add_action( 'after_setup_theme', 'mroya_studio_editor_style' );
+
+/**
+ * Registers block pattern categories
+ *
+ * @since Mroya Studio 1.0.0
+ *
+ * @return void
+ */
+function mroya_studio_register_block_pattern_categories() {
+	register_block_pattern_category(
+		'mroya_portfolio',
+		array(
+			'label'       => esc_html__( 'Portfolio', 'mroya-studio' ),
+			'description' => esc_html__( 'A collection of portfolio patterns.', 'mroya-studio' ),
+		)
+	);
+}
+add_action( 'init', 'mroya_studio_register_block_pattern_categories', 9 );
+
+/**
+ * Filtering the query to display related projects
+ *
+ * @since Mroya Studio 1.0.0
+ *
+ * @return $query
+ */
+function mroya_studio_related_projects( $query, \WP_Block $block ) {
+	$block_context_query = $block->context[ 'query' ];
+
+	if ( isset( $block_context_query[ 'blockName' ] ) &&
+		'related-projects' === $block_context_query[ 'blockName' ]
+	) {
+		$current_post_id = get_the_ID();
+		$post_categories = wp_get_post_terms( $current_post_id, 'uk-project_category', array( 'fields' => 'ids' ) );
+
+		if ( ! empty( $post_categories ) ) {
+			$query[ 'tax_query' ] = array(
+				array(
+					'taxonomy' => 'uk-project_category',
+					'field'    => 'term_id',
+					'terms'    => $post_categories,
+				),
+			);
+		}
+
+		$query['post__not_in'] = array( $current_post_id );
+	}
+
+	return $query;
+}
+add_filter( 'query_loop_block_query_vars', 'mroya_studio_related_projects', 10, 2 );
+
+// Load TGM Plugin Activation file.
+require_once get_stylesheet_directory() . '/inc/theme-required-plugins.php';
