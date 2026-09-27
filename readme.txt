@@ -1,7 +1,7 @@
 === Mroya Studio ===
 
 Contributors: Uladzimir Kulesh
-Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-site-editing, block-patterns, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, blog
+Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-site-editing, block-patterns, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, blog, portfolio
 Requires at least: 6.7
 Tested up to: 7.1
 Version: 1.0.0
