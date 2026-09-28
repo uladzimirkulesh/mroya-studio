@@ -1,6 +1,4 @@
-/*-------------------------------------------------------
-Fire on window load
--------------------------------------------------------*/
-window.addEventListener( 'load', () => {
-	// Type your code here...
-} );
+import * as Helpers from './helpers';
+
+// Helpers
+Helpers.localTime();
