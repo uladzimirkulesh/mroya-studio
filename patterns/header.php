@@ -25,11 +25,11 @@
 		<!-- /wp:group -->
 
 		<!-- wp:navigation {"overlay":"navigation-overlay","overlayBackgroundColor":"contrast","overlayTextColor":"base","style":{"layout":{"selfStretch":"fixed","flexSize":"50%"},"css":"line-height: 3rem;"},"layout":{"type":"flex","justifyContent":"right","flexWrap":"nowrap"}} -->
-			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Home', 'mroya' ); ?>","url":"#"} /-->
-			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Portfolio', 'mroya' ); ?>","url":"#"} /-->
-			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Journal', 'mroya' ); ?>","url":"#"} /-->
-			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'mroya' ); ?>","url":"#"} /-->
-			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Contact', 'mroya' ); ?>","url":"#","className":"has-arrow"} /-->
+			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Home', 'mroya-studio' ); ?>","url":"#"} /-->
+			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Portfolio', 'mroya-studio' ); ?>","url":"#"} /-->
+			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Journal', 'mroya-studio' ); ?>","url":"#"} /-->
+			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'mroya-studio' ); ?>","url":"#"} /-->
+			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Contact', 'mroya-studio' ); ?>","url":"#","className":"has-arrow"} /-->
 		<!-- /wp:navigation -->
 	</div>
 	<!-- /wp:group -->

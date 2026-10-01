@@ -1,0 +1,22 @@
+@use "../tools/mixins";
+
+/*-------------------------------------------------------
+Footer
+-------------------------------------------------------*/
+.footer--default {
+
+	.footer__copyrights {
+
+		a {
+			text-underline-offset: 0.25em;
+			text-decoration-color: transparent;
+
+			&:hover,
+			&:focus,
+			&:active {
+				text-underline-offset: 0.15em;
+				text-decoration-color: currentColor;
+			}
+		}
+	}
+}

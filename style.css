@@ -32,6 +32,16 @@ Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custo
     margin-left: auto;
   }
 }
+.footer--default .footer__copyrights a {
+  text-underline-offset: 0.25em;
+  text-decoration-color: transparent;
+}
+.footer--default .footer__copyrights a:hover,
+.footer--default .footer__copyrights a:focus,
+.footer--default .footer__copyrights a:active {
+  text-underline-offset: 0.15em;
+  text-decoration-color: currentColor;
+}
 .wp-block-navigation .wp-block-navigation-item.has-arrow a {
   text-wrap: nowrap;
 }
