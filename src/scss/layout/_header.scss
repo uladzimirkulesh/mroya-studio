@@ -5,7 +5,7 @@ Header
 -------------------------------------------------------*/
 .header--default {
 
-	> .wp-block-group {
+	> .wp-block-group.is-layout-grid {
 
 		@include mixins.media("break-large", max) {
 			grid-template-columns: repeat(2, minmax(0, auto));
@@ -31,6 +31,42 @@ Header
 					}
 				}
 			}
+		}
+	}
+
+	// Header with contrast links
+	&.has-contrast-links {
+		color: var(--wp--preset--color--base);
+
+		a {
+			color: var(--wp--preset--color--base);
+		}
+	}
+
+	// Header with white links
+	&.has-white-links {
+		color: rgb(255, 255, 255);
+
+		a {
+			color: rgb(255, 255, 255);
+		}
+	}
+}
+
+/*-------------------------------------------------------
+Fixed header
+-------------------------------------------------------*/
+.header--fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	body.admin-bar & {
+		top: 46px;
+
+		@media only screen and (min-width: 783px) {
+			top: 32px;
 		}
 	}
 }

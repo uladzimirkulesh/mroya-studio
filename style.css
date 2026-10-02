@@ -16,7 +16,7 @@ Text Domain: mroya-studio
 Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-site-editing, block-patterns, sticky-post, threaded-comments, translation-ready, block-styles, style-variations, blog, portfolio
 */
 @media only screen and (max-width: 959px) {
-  .header--default > .wp-block-group {
+  .header--default > .wp-block-group.is-layout-grid {
     grid-template-columns: repeat(2, minmax(0, auto));
   }
 }
@@ -30,6 +30,32 @@ Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custo
 @media only screen and (min-width: 960px) {
   .header--default .wp-block-navigation .wp-block-navigation__container > .wp-block-navigation-item:nth-last-child(1 of .wp-block-navigation-item) {
     margin-left: auto;
+  }
+}
+.header--default.has-contrast-links {
+  color: var(--wp--preset--color--base);
+}
+.header--default.has-contrast-links a {
+  color: var(--wp--preset--color--base);
+}
+.header--default.has-white-links {
+  color: rgb(255, 255, 255);
+}
+.header--default.has-white-links a {
+  color: rgb(255, 255, 255);
+}
+.header--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+body.admin-bar .header--fixed {
+  top: 46px;
+}
+@media only screen and (min-width: 783px) {
+  body.admin-bar .header--fixed {
+    top: 32px;
   }
 }
 .footer--default .footer__copyrights a {
