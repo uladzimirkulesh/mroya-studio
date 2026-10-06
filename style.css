@@ -49,6 +49,7 @@ Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custo
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 10000;
 }
 body.admin-bar .header--fixed {
   top: 46px;
