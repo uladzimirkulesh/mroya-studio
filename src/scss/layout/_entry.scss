@@ -1,0 +1,29 @@
+@use "../tools/mixins";
+
+/*-------------------------------------------------------
+Entry
+-------------------------------------------------------*/
+.entry {
+
+	.wp-block-post-title {
+
+		@include mixins.media("break-large") {
+			max-width: calc(75% - var(--wp--style--block-gap));
+			margin-left: 0 !important;
+		}
+	}
+
+	.entry-content {
+
+		body.wp-singular:not(.uk-project-template) & {
+
+			@include mixins.media("break-large", max) {
+				margin-block-start: clamp(1.5rem, 3.75vw + 0.75rem, 4.5rem);
+			}
+		}
+	}
+
+	.entry-header + .entry-content:has(.project-description) {
+		margin-top: 2rem;
+	}
+}

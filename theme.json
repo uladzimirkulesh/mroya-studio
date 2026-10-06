@@ -285,9 +285,23 @@
 					"lineHeight": "var:custom|typography|line-height|xx-small",
 					"letterSpacing": "var:custom|typography|letter-spacing|xx-small",
 					"textTransform": "uppercase"
+				},
+				"elements": {
+					"link": {
+						"color": {
+							"text": "currentColor"
+						},
+						"typography": {
+							"textDecoration": "none"
+						},
+						"css": "& { display: inline-block; }"
+					}
 				}
 			},
 			"core/post-terms": {
+				"color": {
+					"text": "var:preset|color|contrast-3"
+				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|font-monospace",
 					"fontSize": "var:preset|font-size|xx-small",

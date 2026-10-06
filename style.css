@@ -59,6 +59,20 @@ body.admin-bar .header--fixed {
     top: 32px;
   }
 }
+@media only screen and (min-width: 960px) {
+  .entry .wp-block-post-title {
+    max-width: calc(75% - var(--wp--style--block-gap));
+    margin-left: 0 !important;
+  }
+}
+@media only screen and (max-width: 959px) {
+  body.wp-singular:not(.uk-project-template) .entry .entry-content {
+    margin-block-start: clamp(1.5rem, 3.75vw + 0.75rem, 4.5rem);
+  }
+}
+.entry .entry-header + .entry-content:has(.project-description) {
+  margin-top: 2rem;
+}
 .footer--default .footer__copyrights a {
   text-underline-offset: 0.25em;
   text-decoration-color: transparent;
