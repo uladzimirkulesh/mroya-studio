@@ -1,0 +1,27 @@
+/*-------------------------------------------------------
+Query
+-------------------------------------------------------*/
+@use "query/posts-grid-1";
+@use "query/posts-grid-2";
+
+@use "query/projects-grid-1";
+@use "query/projects-grid-2";
+@use "query/projects-grid-3";
+@use "query/projects-grid-4";
+@use "query/projects-grid-5";
+
+/*-------------------------------------------------------
+Query Item
+-------------------------------------------------------*/
+.wp-block-query {
+
+	.wp-block-post {
+
+		&:not(.has-post-thumbnail):not(.uk-project) {
+			align-self: self-start;
+			padding: var(--wp--preset--spacing--10);
+			background-color: var(--wp--custom--color--card--background, var(--wp--preset--color--base));
+			border-radius: var(--wp--custom--border--radius);
+		}
+	}
+}
