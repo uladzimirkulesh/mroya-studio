@@ -32,6 +32,9 @@ Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custo
     margin-left: auto;
   }
 }
+.header--default .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+  line-height: var(--wp--custom--typography--line-height--small, inherit);
+}
 .header--default.has-contrast-links {
   color: var(--wp--preset--color--base);
 }
