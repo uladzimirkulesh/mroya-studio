@@ -6,19 +6,6 @@ Projects grid layout (style 5)
 .wp-block-query {
 
 	.is-layout-projects-grid--5 {
-		row-gap: var(--wp--preset--spacing--20);
-
-		@media only screen and (min-width: 601px) and (max-width: 781px) {
-			grid-template-columns: 1fr;
-		}
-
-		@media only screen and (min-width: 782px) and (max-width: 959px) {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-		}
-
-		@media only screen and (min-width: 960px) and (max-width: 1279px) {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
-		}
 
 		.wp-block-post {
 

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: List of posts, grid (style 2)
- * Slug: mroya/template-query-posts-grid-2
+ * Slug: mroya-studio/template-query-posts-grid-2
  * Categories: query
  * Block Types: core/query
  * Description: List of posts, grid with featured image, category, post date, title and excerpt.

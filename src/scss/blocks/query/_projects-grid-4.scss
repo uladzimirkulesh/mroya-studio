@@ -6,9 +6,11 @@ Projects grid layout (style 4)
 .wp-block-query {
 
 	.is-layout-projects-grid--4 {
-		row-gap: var(--wp--preset--spacing--20);
+		@media only screen and (max-width: 782px) {
+			grid-template-columns: 1fr;
+		}
 
-		@media only screen and (min-width: 782px) and (max-width: 1279px) {
+		@media only screen and (min-width: 783px) and (max-width: 1279px) {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 

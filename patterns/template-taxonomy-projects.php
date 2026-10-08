@@ -16,7 +16,7 @@
 <!-- wp:group {"tagName":"main","metadata":{"name":"<?php echo esc_html_x( 'Main', 'Name for the main template part', 'mroya-studio' ); ?>"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
 	<!-- wp:template-part {"slug":"page-header-portfolio-archive","align":"wide","className":"page-header"} /-->
-	<!-- wp:pattern {"slug":"mroya-studio/template-query-projects-posts-grid-5"} /-->
+	<!-- wp:pattern {"slug":"mroya-studio/template-query-projects-grid-5"} /-->
 </main>
 <!-- /wp:group -->
 

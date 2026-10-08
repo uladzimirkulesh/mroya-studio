@@ -6,7 +6,6 @@ Projects grid layout (style 3)
 .wp-block-query {
 
 	.is-layout-projects-grid--3 {
-		row-gap: var(--wp--preset--spacing--20);
 
 		@include mixins.media("break-medium", max) {
 			grid-template-columns: 1fr;
