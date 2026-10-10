@@ -1,0 +1,24 @@
+@use "../tools/mixins";
+
+/*-------------------------------------------------------
+Section "About"
+-------------------------------------------------------*/
+.section--about {
+
+	.section__container {
+
+		> * {
+
+			@include mixins.media("break-large", max) {
+				grid-column: span 2;
+			}
+		}
+	}
+
+	.block--skills {
+
+		.skills-list__separator {
+			margin-left: 0;
+		}
+	}
+}
