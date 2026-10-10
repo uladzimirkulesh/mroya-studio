@@ -1,0 +1,11 @@
+@use "../tools/mixins";
+
+/*-------------------------------------------------------
+Project description
+-------------------------------------------------------*/
+.project-description {
+
+	@include mixins.media("break-large", max) {
+		grid-template-columns: 1fr;
+	}
+}

@@ -227,11 +227,48 @@ body.admin-bar .header--fixed {
   align-self: self-start;
   padding: var(--wp--preset--spacing--10);
   background-color: var(--wp--custom--color--card--background, var(--wp--preset--color--base));
-  border-radius: var(--wp--custom--border--radius);
+  border-radius: var(--wp--custom--border--radius--normal);
 }
 @media only screen and (max-width: 782px) {
   .section--services .services-list__item::after {
     display: none;
+  }
+}
+@media only screen and (max-width: 959px) {
+  .project-description {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 782px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+.gallery .wp-block-image {
+  overflow: clip;
+}
+@media only screen and (max-width: 782px) {
+  .gallery .wp-block-image {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+.gallery .wp-block-image img {
+  width: 100%;
+}
+@media only screen and (min-width: 783px) {
+  .gallery--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media only screen and (min-width: 960px) {
+  .gallery--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .gallery--3 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 .wpcf7-form {
