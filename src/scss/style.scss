@@ -16,6 +16,11 @@ Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custo
 */
 
 /*-------------------------------------------------------
+Base Styles
+-------------------------------------------------------*/
+@use "base/forms";
+
+/*-------------------------------------------------------
 Layout Styles
 -------------------------------------------------------*/
 @use "layout/header";
@@ -25,6 +30,7 @@ Layout Styles
 /*-------------------------------------------------------
 Block Styles
 -------------------------------------------------------*/
+@use "blocks/button";
 @use "blocks/navigation";
 @use "blocks/query";
 

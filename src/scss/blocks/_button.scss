@@ -1,0 +1,127 @@
+/*-------------------------------------------------------
+Button
+-------------------------------------------------------*/
+
+// Style "External"
+.wp-block-button.is-style-external {
+
+	> .wp-block-button__link {
+		text-underline-offset: 0.25em;
+		text-decoration-color: transparent;
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-underline-offset: 0.15em;
+			text-decoration-color: currentColor;
+
+			&::after {
+				animation: 0.35s iconArrow45 ease-in-out;
+			}
+		}
+
+		&.has-background {
+			padding: 0.5rem 1.25rem;
+		}
+	}
+}
+
+// Style "More 3"
+.wp-block-button.is-style-more-3 {
+
+	> .wp-block-button__link {
+
+		&::after {
+			transition: all 0.35s ease-in-out;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+
+			&::after {
+				transform: translateX(0.25rem);
+			}
+		}
+
+		&.has-background {
+			padding: 0.5rem 1.25rem;
+		}
+	}
+}
+
+// Style "More 4"
+.wp-block-button.is-style-more-4 {
+
+	> .wp-block-button__link {
+		text-underline-offset: 0.15em;
+		text-decoration-color: currentColor;
+
+		&::after {
+			transition: all 0.35s ease-in-out;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			text-underline-offset: 0.25em;
+			text-decoration-color: transparent;
+
+			&::after {
+				transform: translateX(0.25em);
+			}
+		}
+
+		&.has-background {
+			padding: 0.5em 1em;
+			text-decoration: none;
+		}
+	}
+}
+
+// Style "Down"
+.wp-block-button.is-style-down {
+
+	> .wp-block-button__link {
+
+		&::after {
+			transition: all 0.35s ease-in-out;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+
+			&::before {
+				animation: 0.35s iconArrowDown ease-out;
+			}
+		}
+
+		&.has-background {
+			padding: 0.5rem 1.25rem;
+		}
+	}
+}
+
+// Animation for arrow down icon
+@keyframes iconArrowDown {
+
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	75% {
+		transform: translateY(0.25rem);
+		opacity: 0;
+	}
+
+	76% {
+		transform: translateY(-0.25rem);
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

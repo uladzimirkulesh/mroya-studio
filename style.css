@@ -15,6 +15,14 @@ License URI: URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: mroya-studio
 Tags: one-column, two-columns, three-columns, four-columns, custom-colors, custom-header, custom-menu, custom-logo, featured-images, full-site-editing, block-patterns, sticky-post, threaded-comments, translation-ready, block-styles, style-variations, blog, portfolio
 */
+:not(.wp-block-more) > input:not([type=checkbox]):not([type=submit]),
+textarea {
+  min-height: 2.75rem;
+  padding: 0.5625rem 1rem;
+}
+select {
+  height: 2.75rem;
+}
 @media only screen and (max-width: 959px) {
   .header--default > .wp-block-group.is-layout-grid {
     grid-template-columns: repeat(2, minmax(0, auto));
@@ -85,6 +93,85 @@ body.admin-bar .header--fixed {
 .footer--default .footer__copyrights a:active {
   text-underline-offset: 0.15em;
   text-decoration-color: currentColor;
+}
+.wp-block-button.is-style-external > .wp-block-button__link {
+  text-underline-offset: 0.25em;
+  text-decoration-color: transparent;
+}
+.wp-block-button.is-style-external > .wp-block-button__link:hover,
+.wp-block-button.is-style-external > .wp-block-button__link:focus,
+.wp-block-button.is-style-external > .wp-block-button__link:active {
+  text-underline-offset: 0.15em;
+  text-decoration-color: currentColor;
+}
+.wp-block-button.is-style-external > .wp-block-button__link:hover::after,
+.wp-block-button.is-style-external > .wp-block-button__link:focus::after,
+.wp-block-button.is-style-external > .wp-block-button__link:active::after {
+  animation: 0.35s iconArrow45 ease-in-out;
+}
+.wp-block-button.is-style-external > .wp-block-button__link.has-background {
+  padding: 0.5rem 1.25rem;
+}
+.wp-block-button.is-style-more-3 > .wp-block-button__link::after {
+  transition: all 0.35s ease-in-out;
+}
+.wp-block-button.is-style-more-3 > .wp-block-button__link:hover::after,
+.wp-block-button.is-style-more-3 > .wp-block-button__link:focus::after,
+.wp-block-button.is-style-more-3 > .wp-block-button__link:active::after {
+  transform: translateX(0.25rem);
+}
+.wp-block-button.is-style-more-3 > .wp-block-button__link.has-background {
+  padding: 0.5rem 1.25rem;
+}
+.wp-block-button.is-style-more-4 > .wp-block-button__link {
+  text-underline-offset: 0.15em;
+  text-decoration-color: currentColor;
+}
+.wp-block-button.is-style-more-4 > .wp-block-button__link::after {
+  transition: all 0.35s ease-in-out;
+}
+.wp-block-button.is-style-more-4 > .wp-block-button__link:hover,
+.wp-block-button.is-style-more-4 > .wp-block-button__link:focus,
+.wp-block-button.is-style-more-4 > .wp-block-button__link:active {
+  text-underline-offset: 0.25em;
+  text-decoration-color: transparent;
+}
+.wp-block-button.is-style-more-4 > .wp-block-button__link:hover::after,
+.wp-block-button.is-style-more-4 > .wp-block-button__link:focus::after,
+.wp-block-button.is-style-more-4 > .wp-block-button__link:active::after {
+  transform: translateX(0.25em);
+}
+.wp-block-button.is-style-more-4 > .wp-block-button__link.has-background {
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+.wp-block-button.is-style-down > .wp-block-button__link::after {
+  transition: all 0.35s ease-in-out;
+}
+.wp-block-button.is-style-down > .wp-block-button__link:hover::before,
+.wp-block-button.is-style-down > .wp-block-button__link:focus::before,
+.wp-block-button.is-style-down > .wp-block-button__link:active::before {
+  animation: 0.35s iconArrowDown ease-out;
+}
+.wp-block-button.is-style-down > .wp-block-button__link.has-background {
+  padding: 0.5rem 1.25rem;
+}
+@keyframes iconArrowDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(0.25rem);
+    opacity: 0;
+  }
+  76% {
+    transform: translateY(-0.25rem);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 .wp-block-navigation .wp-block-navigation-item.has-arrow a {
   text-wrap: nowrap;

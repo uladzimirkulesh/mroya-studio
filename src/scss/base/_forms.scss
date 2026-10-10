@@ -1,0 +1,16 @@
+/*-------------------------------------------------------
+Forms
+-------------------------------------------------------*/
+
+/*
+Inputs
+*/
+:not(.wp-block-more) > input:not([type="checkbox"]):not([type="submit"]),
+textarea {
+	min-height: 2.75rem;
+	padding: 0.5625rem 1rem;
+}
+
+select {
+	height: 2.75rem;
+}
