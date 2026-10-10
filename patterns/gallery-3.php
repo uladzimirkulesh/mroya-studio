@@ -6,6 +6,9 @@
  * Categories: gallery
  * Keywords: gallery, portfolio
  * Viewport Width: 1440
+ *
+ * @package Mroya Studio
+ * @since Mroya Studio 1.0.0
  */
 
 ?>

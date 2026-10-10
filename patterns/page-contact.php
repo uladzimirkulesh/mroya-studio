@@ -1,13 +1,16 @@
 <?php
 /**
  * Title: Contact page
- * Slug: mroya-studio/page-contact
+ * Slug: mroya/page-contact
  * Categories: mroya_pages
  * Keywords: studio, contact, starter
  * Block Types: core/post-content
  * Post Types: page
  * Description: Studio contact page with contact text, blocks and form.
  * Viewport width: 1440
+ *
+ * @package Mroya Studio
+ * @since Mroya Studio 1.0.0
  */
 
 ?>

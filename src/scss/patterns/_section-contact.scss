@@ -1,0 +1,26 @@
+@use "../tools/mixins";
+
+/*-------------------------------------------------------
+Section "Contact"
+-------------------------------------------------------*/
+.section--contact {
+
+	.section__content {
+
+		> * {
+
+			@include mixins.media("break-large", max) {
+				grid-column: span 2;
+			}
+
+			@include mixins.media("break-large") {
+				grid-column: 2;
+			}
+		}
+
+		.text--primary {
+			position: relative;
+			left: -0.35vw;
+		}
+	}
+}

@@ -7,7 +7,7 @@
  * Inserter: no
  *
  * @package Mroya Studio
- * @since Mroya Studio 2.0.0
+ * @since Mroya Studio 1.0.0
  */
 
 ?>

@@ -10,14 +10,14 @@
  * Viewport width: 1440
  *
  * @package Mroya Studio
- * @since Mroya Studio 2.0.0
+ * @since Mroya Studio 1.0.0
  */
 
 ?>
 <!-- wp:pattern {"slug":"mroya/section-hero"} /-->
-<!-- wp:pattern {"slug":"mroya/section-cover"} /-->
+<!-- wp:pattern {"slug":"mroya-studio/section-cover"} /-->
 <!-- wp:pattern {"slug":"mroya/section-mission"} /-->
-<!-- wp:pattern {"slug":"mroya/section-recent-projects"} /-->
+<!-- wp:pattern {"slug":"mroya-studio/section-recent-projects"} /-->
 <!-- wp:pattern {"slug":"mroya/section-services"} /-->
 <!-- wp:pattern {"slug":"mroya/section-testimonials"} /-->
 <!-- wp:pattern {"slug":"mroya/section-contact"} /-->

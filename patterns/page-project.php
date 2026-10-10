@@ -8,6 +8,9 @@
  * Post Types: uk-project
  * Description: Project page, contains project information and gallery.
  * Viewport width: 1440
+ *
+ * @package Mroya Studio
+ * @since Mroya Studio 1.0.0
  */
 
 ?>

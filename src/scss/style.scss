@@ -37,10 +37,15 @@ Block Styles
 /*-------------------------------------------------------
 Pattern Styles
 -------------------------------------------------------*/
+@use "patterns/gallery";
 @use "patterns/page-contact";
 @use "patterns/project-description";
-@use "patterns/gallery";
+@use "patterns/section-contact";
+@use "patterns/section-hero";
+@use "patterns/section-mission";
+@use "patterns/section-recent-projects";
 @use "patterns/section-services";
+@use "patterns/section-testimonials";
 
 /*-------------------------------------------------------
 Plugin Styles

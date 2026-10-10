@@ -7,6 +7,9 @@
  * Keywords: portfolio, project
  * Post Types: uk-project
  * Viewport Width: 1440
+ *
+ * @package Mroya Studio
+ * @since Mroya Studio 1.0.0
  */
 
 ?>

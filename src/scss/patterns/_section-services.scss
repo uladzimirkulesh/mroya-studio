@@ -5,16 +5,32 @@ Section "Services"
 -------------------------------------------------------*/
 .section--services {
 
+	.section__header {
+		row-gap: 0.25rem;
+	}
+
 	.services-list {
 
 		&__item {
 
-			&::after {
+			> * {
 
 				@include mixins.media("break-medium", max) {
-					display: none;
+					grid-column: span 2;
 				}
 			}
+		}
+	}
+
+	.item {
+
+		&__title {
+			position: relative;
+			left: -0.2vw;
+		}
+
+		&__separator {
+			margin-left: 0;
 		}
 	}
 }
