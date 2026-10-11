@@ -47,7 +47,7 @@
 	<!-- /wp:group -->
 
 	<!-- wp:pattern {"slug":"mroya/hidden-comments"} /-->
-	<!-- wp:pattern {"slug":"mroya/section-related-projects"} /-->
+	<!-- wp:pattern {"slug":"mroya-studio/section-related-projects"} /-->
 </main>
 <!-- /wp:group -->
 
