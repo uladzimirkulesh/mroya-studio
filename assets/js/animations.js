@@ -1,243 +1,138 @@
-// src/js/animations/page-archive.js
-function pageArchive() {
-  if (!document.body.classList.contains("blog") && !document.body.classList.contains("archive") && !document.body.classList.contains("search")) return;
-  const posts = gsap.utils.toArray(".wp-block-post-template.is-layout-grid .wp-block-post");
-  posts?.length && gsap.effects.fadeInUpBatch(posts, { batchMax: 3 });
-}
-
-// src/js/animations/page-singular.js
-function pageSingular() {
-  if (!document.body.classList.contains("wp-singular")) return;
-  const entry = document.querySelector(".entry");
-  const featuredImg = entry?.querySelector(".wp-block-cover");
-  const img = featuredImg?.querySelector(".wp-block-cover__image-background");
-  img && gsap.effects.parallax(img, {
-    yFrom: 0,
-    yTo: 5,
-    scaleFrom: 1,
-    scaleTo: 1.04,
-    parent: featuredImg,
-    start: "top top"
-  });
-}
-
-// src/js/animations/section-about.js
-function sectionAbout() {
-  const sections = gsap.utils.toArray(".section--about");
-  sections.forEach((section) => {
-    const text = section.querySelector(".section__text");
-    text && gsap.effects.splitTextWords(text);
-  });
-}
-
-// src/js/animations/section-awards.js
-function sectionAwards() {
-  const sections = gsap.utils.toArray(".section--awards");
-  sections.forEach((section) => {
-    const awardsBlock = section.querySelector(".awards-list");
-    const awards = awardsBlock?.children;
-    if (!awards.length) return;
-    ScrollTrigger.create({
-      trigger: awardsBlock,
-      start: ScrollTrigger.defaults().start,
-      toggleActions: "play none none none",
-      onEnter: () => {
-        gsap.effects.fadeInUp(awards);
-      },
-      once: true
-    });
-  });
-}
-
-// src/js/animations/section-clients.js
-function sectionClients() {
-  const sections = gsap.utils.toArray(".section--clients");
-  sections.forEach((section) => {
-    const cards = section.querySelectorAll(".clients-list__item");
-    cards?.length && gsap.effects.fadeInUpBatch(cards);
-  });
-}
-
-// src/js/animations/section-contact.js
-function sectionContact() {
-  const sections = gsap.utils.toArray(".section--contact");
-  sections.forEach((section) => {
-    const img = section.querySelector(".wp-block-cover__image-background");
-    img && gsap.effects.parallax(img, { parent: section });
-  });
-}
-
-// src/js/animations/section-contacts.js
-function sectionContacts() {
-  const sections = gsap.utils.toArray(".section--contacts");
-  sections.forEach((section) => {
-    const text = section.querySelector(".section__text");
-    text && gsap.effects.splitTextWords(text);
-  });
-}
-
-// src/js/animations/section-features.js
-function sectionFeatures() {
-  const sections = gsap.utils.toArray(".section--features");
-  sections.forEach((section) => {
-    const cards = section.querySelectorAll(".featured-list__item");
-    cards?.length && gsap.effects.fadeInUpBatch(cards);
-  });
-}
-
-// src/js/animations/section-hero.js
-function sectionHero() {
-  const sections = gsap.utils.toArray(".section--hero");
-  sections.forEach((section) => {
-    const img = section.querySelector(".wp-block-cover__image-background");
-    img && gsap.effects.parallax(img, {
-      yFrom: 0,
-      yTo: 5,
-      scaleFrom: 1,
-      scaleTo: 1.04,
-      parent: section,
-      start: "top top"
-    });
-  });
-}
-
-// src/js/animations/section-hero-2.js
-function sectionHero2() {
-  const sections = gsap.utils.toArray(".section--hero-2");
-  sections.forEach((section) => {
-    const cover = section.querySelector(".wp-block-cover");
-    const img = section.querySelector(".wp-block-cover__image-background");
-    if (cover && img) {
-      gsap.effects.parallax(img, {
-        parent: cover,
-        yFrom: 0,
-        scaleFrom: 1,
-        start: "top top"
-      });
-    }
-  });
-}
-
-// src/js/animations/section-hero-3.js
-function sectionHero3() {
-  const sections = gsap.utils.toArray(".section--hero-3");
-  sections.forEach((section) => {
-    const img = section.querySelector(".wp-block-cover__image-background");
-    img && gsap.effects.parallax(img, {
-      yFrom: 0,
-      yTo: 5,
-      scaleFrom: 1,
-      scaleTo: 1.04,
-      parent: section,
-      start: "top top"
-    });
-  });
-}
-
-// src/js/animations/section-keep-reading.js
-function sectionKeepReading() {
-  const sections = gsap.utils.toArray(".section--keep-reading");
-  sections.forEach((section) => {
-    const cards = section.querySelectorAll(".wp-block-post");
-    cards?.length && gsap.effects.fadeInUpBatch(cards);
-  });
-}
-
-// src/js/animations/section-mission.js
-function sectionMission() {
-  const sections = gsap.utils.toArray(".section--mission");
-  sections.forEach((section) => {
-    const img = section.querySelector(".wp-block-cover__image-background");
-    img && gsap.effects.parallax(img, { parent: section });
-  });
-}
-
-// src/js/animations/section-team.js
-function sectionTeam() {
-  const sections = gsap.utils.toArray(".section--team");
-  sections.forEach((section) => {
-    const cards = section.querySelectorAll(".members-list__item");
-    cards?.length && gsap.effects.fadeInUpBatch(cards);
-  });
-}
-
-// src/js/animations/section-services.js
-function sectionServices() {
-  const sections = gsap.utils.toArray(".section--services");
-  sections.forEach((section) => {
-    const servicesList = section.querySelector(".services-list");
-    const items = servicesList?.querySelectorAll(".services-list__item");
-    servicesList && items.forEach((item) => {
-      animateItem(item);
-    });
-  });
-}
-function animateItem(item) {
-  const separator = item.querySelector(".wp-block-separator");
-  if (!separator) {
-    return;
+// src/js/animations/magic-cursor/class-magic-cursor.js
+var MagicCursor = class {
+  constructor(rootEl) {
+    this.root = rootEl;
+    gsap.set(this.root, { xPercent: -50, yPercent: -50 });
+    this.xTo = gsap.quickTo(this.root, "x", { duration: 0.25, ease: "power2.out" });
+    this.yTo = gsap.quickTo(this.root, "y", { duration: 0.25, ease: "power2.out" });
+    this.enableMouseTracking();
   }
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: item,
-      start: ScrollTrigger.defaults().start,
-      toggleActions: "play none none none",
-      once: true
-    }
-  });
-  gsap.set(item, {
-    "--services-line-scale": 0
-  });
-  tl.fromTo(
-    separator,
-    {
-      width: 0
-    },
-    {
-      width: "100%",
-      duration: 1.2
-    }
-  );
-  tl.to(
-    item,
-    {
-      "--services-line-scale": 1,
-      duration: 0.9
-    },
-    "<0.3"
-  );
-  return () => {
-    gsap.set(item, {
-      clearProps: "--services-line-scale"
+  /*-------------------------------------------------------
+  Core movement
+  -------------------------------------------------------*/
+  enableMouseTracking() {
+    window.addEventListener("mousemove", (e) => {
+      this.xTo(e.clientX);
+      this.yTo(e.clientY);
+      setTimeout(() => {
+        this.root.classList.add("is-active");
+      }, 250);
     });
-  };
+  }
+  /*-------------------------------------------------------
+  Inner labels
+  -------------------------------------------------------*/
+  setLabel(content = null) {
+    this.root.querySelector(".magic-cursor__label")?.remove();
+    if (!content) return;
+    const inner = document.createElement("div");
+    inner.className = "magic-cursor__label";
+    inner.textContent = content;
+    this.root.appendChild(inner);
+  }
+  /*-------------------------------------------------------
+  Animations (pulse, expand, etc.)
+  -------------------------------------------------------*/
+  expand(from = 0.1, to = 0.8) {
+    gsap.fromTo(this.root, {
+      scale: from
+    }, {
+      scale: to,
+      autoAlpha: 0.07,
+      duration: 0.25,
+      ease: gsap.defaults().ease
+    });
+  }
+  pulse(from = 0.8, to = 0.6) {
+    gsap.fromTo(this.root, {
+      scale: from
+    }, {
+      scale: to,
+      duration: 0.05,
+      yoyo: true,
+      repeat: 1,
+      ease: "none"
+    });
+  }
+  hide(from = 0.1, to = 0.3) {
+    gsap.fromTo(this.root, {
+      scale: from
+    }, {
+      scale: to,
+      autoAlpha: 0,
+      duration: 0.25,
+      ease: gsap.defaults().ease
+    });
+  }
+  thumbnail(from = 0.1, to = 1) {
+    this.setLabel(wp.i18n.__("[ Open ]", "mroya"));
+    gsap.fromTo(this.root, {
+      scale: from
+    }, {
+      scale: to,
+      backgroundColor: "rgba(0, 0, 0, 0.3)",
+      duration: 0.25,
+      ease: gsap.defaults().ease
+    });
+  }
+  reset() {
+    this.setLabel();
+    gsap.to(this.root, {
+      scale: 0.1,
+      backgroundColor: "var(--wp--custom--color--cursor)",
+      autoAlpha: 1,
+      duration: 0.25,
+      ease: gsap.defaults().ease
+    });
+  }
+  /*-------------------------------------------------------
+  State helpers
+  -------------------------------------------------------*/
+  addState(state) {
+    this.root.classList.add(`state--${state}`);
+  }
+  removeState(state) {
+    this.root.classList.remove(`state--${state}`);
+  }
+};
+
+// src/js/animations/magic-cursor/magic-cursor-events.js
+function bindMagicCursorEvents(cursor) {
+  document.querySelectorAll("a:not(.comment-reply-link):not(.post-page-numbers)").forEach((el) => {
+    if (el.closest(".wp-block-post-featured-image, .wp-block-button:not(.is-style-more-3):not(.is-style-more-4), .wp-block-query-pagination")) return;
+    el.addEventListener("mouseenter", () => cursor.expand());
+    el.addEventListener("mouseleave", () => cursor.reset());
+    el.addEventListener("click", () => cursor.pulse());
+  });
+  document.querySelectorAll("button, input, textarea, .wp-block-button:not(.is-style-more-3):not(.is-style-more-4) a, .comment-reply-link, .post-page-numbers, .wp-block-query-pagination a").forEach((el) => {
+    el.addEventListener("mouseenter", () => cursor.hide());
+    el.addEventListener("mouseleave", () => cursor.reset());
+  });
+  document.querySelectorAll(".wp-block-post-featured-image a").forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      cursor.thumbnail();
+      cursor.addState("blured");
+    });
+    el.addEventListener("mouseleave", () => {
+      cursor.reset();
+      cursor.removeState("blured");
+    });
+    el.addEventListener("click", () => cursor.pulse(1, 0.8));
+  });
 }
 
-// src/js/animations/section-testimonials.js
-function sectionTestimonials() {
-  const sections = gsap.utils.toArray(".section--testimonials");
-  sections.forEach((section) => {
-    const cards = section.querySelectorAll(".testimonials-list__item");
-    cards?.length && gsap.effects.fadeInUpBatch(cards);
+// src/js/animations/magic-cursor/index.js
+function initMagicCursor() {
+  const el = document.querySelector(".magic-cursor");
+  if (!el) return;
+  let mm = gsap.matchMedia();
+  mm.add("(min-width: 960px)", () => {
+    const cursor = new MagicCursor(el);
+    bindMagicCursorEvents(cursor);
   });
 }
 
 // src/js/animations.js
 window.addEventListener("load", () => {
-  pageArchive();
-  pageSingular();
-  sectionAbout();
-  sectionAwards();
-  sectionClients();
-  sectionContact();
-  sectionContacts();
-  sectionFeatures();
-  sectionHero();
-  sectionHero2();
-  sectionHero3();
-  sectionKeepReading();
-  sectionMission();
-  sectionServices();
-  sectionTeam();
-  sectionTestimonials();
+  initMagicCursor();
 });

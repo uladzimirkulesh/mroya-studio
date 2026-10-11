@@ -14,3 +14,5 @@ export { sectionMission } from './section-mission';
 export { sectionTeam } from './section-team';
 export { sectionServices } from './section-services';
 export { sectionTestimonials } from './section-testimonials';
+
+export { initMagicCursor } from './magic-cursor';

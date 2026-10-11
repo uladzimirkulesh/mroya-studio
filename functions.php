@@ -163,5 +163,23 @@ function mroya_studio_related_projects( $query, \WP_Block $block ) {
 }
 add_filter( 'query_loop_block_query_vars', 'mroya_studio_related_projects', 10, 2 );
 
+/**
+ * Adds magic cursor HTML in the top of the body tag
+ *
+ * @since Mroya Studio 1.0.0
+ * @return void
+ */
+function mroya_studio_magic_cursor() {
+
+/**
+	 * Add magic cursor only if the Mroya Premium
+	 * plugin is installed and activated
+	 */
+	if ( wp_script_is( 'mroya-premium-screen', 'registered' ) ) {
+		echo '<div class="magic-cursor"></div>';
+	}
+}
+add_action( 'wp_body_open', 'mroya_studio_magic_cursor' );
+
 // Load TGM Plugin Activation file.
 require_once get_stylesheet_directory() . '/inc/theme-required-plugins.php';
