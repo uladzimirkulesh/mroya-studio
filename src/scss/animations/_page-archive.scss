@@ -1,11 +1,33 @@
 /*-------------------------------------------------------
 Page "Archive"
 -------------------------------------------------------*/
+.page-header {
+
+	&__title,
+	&__description,
+	&__search {
+		visibility: hidden;
+	}
+}
+
 .blog,
 .archive,
 .search {
 
-	.wp-block-post-template.is-layout-grid .wp-block-post {
+	.wp-block-post-template.is-layout-grid .wp-block-post,
+	.wp-block-query-pagination,
+	.wp-block-query-no-results {
 		visibility: hidden;
+	}
+}
+
+.page-header__title {
+
+	.line {
+		margin-bottom: -0.1em;
+	}
+
+	.word {
+		padding-bottom: 0.1em;
 	}
 }

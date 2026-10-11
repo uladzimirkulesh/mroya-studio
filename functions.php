@@ -131,6 +131,21 @@ function mroya_studio_register_block_pattern_categories() {
 add_action( 'init', 'mroya_studio_register_block_pattern_categories', 9 );
 
 /**
+ * Unregisters block patterns
+ *
+ * @since Mroya Studio 1.0.0
+ *
+ * @return void
+ */
+function mroya_studio_unregister_block_patterns() {
+	unregister_block_pattern( 'mroya/section-hero-3' );
+	unregister_block_pattern( 'mroya/section-contacts' );
+	unregister_block_pattern( 'mroya/section-faq' );
+	unregister_block_pattern( 'mroya/section-features' );
+}
+add_action( 'init', 'mroya_studio_unregister_block_patterns', 999 );
+
+/**
  * Filtering the query to display related projects
  *
  * @since Mroya Studio 1.0.0
@@ -165,16 +180,13 @@ add_filter( 'query_loop_block_query_vars', 'mroya_studio_related_projects', 10, 
 
 /**
  * Adds magic cursor HTML in the top of the body tag
+ * only if the Mroya Premium plugin is installed
+ * and activated
  *
  * @since Mroya Studio 1.0.0
  * @return void
  */
 function mroya_studio_magic_cursor() {
-
-/**
-	 * Add magic cursor only if the Mroya Premium
-	 * plugin is installed and activated
-	 */
 	if ( wp_script_is( 'mroya-premium-screen', 'registered' ) ) {
 		echo '<div class="magic-cursor"></div>';
 	}

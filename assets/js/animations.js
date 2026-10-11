@@ -132,7 +132,95 @@ function initMagicCursor() {
   });
 }
 
+// src/js/animations/error-404.js
+function error404Animations() {
+  if (!document.body.classList.contains("error404")) return;
+  const target = document.querySelector(".error404 main > .wp-block-group");
+  target && gsap.effects.fadeInUp(target, {
+    delay: 0.3
+  });
+}
+
+// src/js/animations/page-archive.js
+function pageArchive() {
+  if (!document.body.classList.contains("blog") && !document.body.classList.contains("archive") && !document.body.classList.contains("search")) return;
+  const pageHeader = document.querySelector(".page-header");
+  const pageHeaderTitle = pageHeader?.querySelector(".page-header__title");
+  const pageHeaderDescription = pageHeader?.querySelector(".page-header__description");
+  const pageHeaderSearch = pageHeader?.querySelector(".page-header__search");
+  const posts = gsap.utils.toArray(".wp-block-post-template.is-layout-grid .wp-block-post");
+  const pagination = document.querySelector(".wp-block-query-pagination");
+  const noResults = document.querySelector(".wp-block-query-no-results");
+  const tl = gsap.timeline({ delay: 0.3 });
+  pageHeaderTitle && tl.set(pageHeaderTitle, { autoAlpha: 1 });
+  pageHeaderDescription && tl.set(pageHeaderDescription, { autoAlpha: 1 });
+  tl.addLabel("start");
+  pageHeaderTitle && tl.splitTextLinesMask(pageHeaderTitle);
+  pageHeaderDescription && tl.splitTextLinesMask(pageHeaderDescription, "<0.42");
+  pageHeaderSearch && tl.fadeInUp(pageHeaderSearch, "<0.42");
+  if (posts?.length) {
+    tl.call(() => {
+      const event = new CustomEvent("archivePostsAnimation", {
+        cancelable: true,
+        detail: {
+          posts
+        }
+      });
+      const prevented = !document.dispatchEvent(event);
+      if (!prevented) {
+        animatePosts(posts);
+      }
+    }, [], "start+=0.24");
+  }
+  pagination && tl.call(animatePagination, [pagination]);
+  noResults && tl.fadeInUp(noResults);
+}
+function animatePosts(posts) {
+  gsap.effects.fadeInUpBatch(posts);
+}
+function animatePagination(pagination) {
+  ScrollTrigger.create({
+    trigger: pagination,
+    start: ScrollTrigger.defaults().start,
+    toggleActions: "play none none none",
+    onEnter: () => {
+      gsap.effects.fadeInUp(pagination, { yPercent: 80 });
+    },
+    once: true
+  });
+}
+
+// src/js/animations/page-singular.js
+function pageSingular() {
+  if (!document.body.classList.contains("wp-singular")) return;
+  const entry = document.querySelector("#entry");
+  const entryElements = entry?.querySelectorAll(".wp-block-post-title, .entry-meta, .wp-block-post-featured-image, .entry-content, .entry-footer");
+  const featuredImg = entry?.querySelector(".wp-block-post-featured-image");
+  const img = featuredImg?.querySelector("img");
+  const comments = document.querySelector(".wp-block-comments");
+  img && gsap.effects.parallax(img, {
+    parent: featuredImg
+  });
+  const tl = gsap.timeline({ delay: 0.3 });
+  entryElements?.length && tl.fadeInUp(entryElements);
+  comments && tl.call(animateComments, [comments], "<0.7");
+}
+function animateComments(comments) {
+  ScrollTrigger.create({
+    trigger: comments,
+    start: ScrollTrigger.defaults().start,
+    toggleActions: "play none none none",
+    onEnter: () => {
+      gsap.effects.fadeInUp(comments);
+    },
+    once: true
+  });
+}
+
 // src/js/animations.js
 window.addEventListener("load", () => {
   initMagicCursor();
+  error404Animations();
+  pageArchive();
+  pageSingular();
 });

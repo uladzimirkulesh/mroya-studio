@@ -1,0 +1,20 @@
+/*-------------------------------------------------------
+Page "Singular"
+-------------------------------------------------------*/
+.wp-singular {
+
+	.entry {
+
+		.wp-block-post-title,
+		.entry-meta,
+		.wp-block-post-featured-image,
+		.entry-content,
+		.entry-footer {
+			visibility: hidden;
+		}
+	}
+
+	.wp-block-comments {
+		visibility: hidden;
+	}
+}

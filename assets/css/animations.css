@@ -1,4 +1,7 @@
 /* src/scss/animations.scss */
+.error404 main > .wp-block-group {
+  visibility: hidden;
+}
 .magic-cursor {
   position: fixed;
   top: 0;
@@ -40,32 +43,36 @@
 .magic-cursor__label {
   display: block;
 }
-.section--contact .wp-block-cover__image-background {
-  transform: scale(1.05);
-}
-.section--contacts .section__text > * {
-  opacity: 0.2;
-}
-.section--features .featured-list__item {
+.page-header__title,
+.page-header__description,
+.page-header__search {
   visibility: hidden;
 }
-.section--testimonials .testimonials-list__item {
+.blog .wp-block-post-template.is-layout-grid .wp-block-post,
+.blog .wp-block-query-pagination,
+.blog .wp-block-query-no-results,
+.archive .wp-block-post-template.is-layout-grid .wp-block-post,
+.archive .wp-block-query-pagination,
+.archive .wp-block-query-no-results,
+.search .wp-block-post-template.is-layout-grid .wp-block-post,
+.search .wp-block-query-pagination,
+.search .wp-block-query-no-results {
   visibility: hidden;
 }
-.section--services .services-list__item {
-  --services-line-scale: 0;
+.page-header__title .line {
+  margin-bottom: -0.1em;
 }
-.section--services .services-list__item::after {
-  transform: scaleY(var(--services-line-scale));
-  transform-origin: top center;
+.page-header__title .word {
+  padding-bottom: 0.1em;
 }
-.section--mission .wp-block-cover__image-background {
-  transform: scale(1.05);
-}
-.section--clients .clients-list__item {
+.wp-singular .entry .wp-block-post-title,
+.wp-singular .entry .entry-meta,
+.wp-singular .entry .wp-block-post-featured-image,
+.wp-singular .entry .entry-content,
+.wp-singular .entry .entry-footer {
   visibility: hidden;
 }
-.section--team .members-list__item {
+.wp-singular .wp-block-comments {
   visibility: hidden;
 }
 .section--about .section__text > * {
@@ -74,11 +81,28 @@
 .section--awards .awards-list > * {
   visibility: hidden;
 }
+.section--clients .clients-list__item {
+  visibility: hidden;
+}
+.section--contact .wp-block-cover__image-background {
+  transform: scale(1.05);
+}
 .section--keep-reading .wp-block-post {
   visibility: hidden;
 }
-.blog .wp-block-post-template.is-layout-grid .wp-block-post,
-.archive .wp-block-post-template.is-layout-grid .wp-block-post,
-.search .wp-block-post-template.is-layout-grid .wp-block-post {
+.section--mission .wp-block-cover__image-background {
+  transform: scale(1.05);
+}
+.section--services .services-list__item {
+  --services-line-scale: 0;
+}
+.section--services .services-list__item::after {
+  transform: scaleY(var(--services-line-scale));
+  transform-origin: top center;
+}
+.section--team .members-list__item {
+  visibility: hidden;
+}
+.section--testimonials .testimonials-list__item {
   visibility: hidden;
 }
