@@ -1,0 +1,11 @@
+// src/js/editor.js
+wp.domReady(() => {
+  wp.blocks.unregisterBlockStyle("core/quote", "default");
+  wp.blocks.unregisterBlockStyle("core/quote", "plain");
+  wp.blocks.unregisterBlockStyle("core/group", "section-2");
+  wp.blocks.unregisterBlockStyle("core/columns", "section-2");
+  wp.blocks.unregisterBlockStyle("core/column", "section-2");
+  wp.blocks.unregisterBlockStyle("core/group", "section-3");
+  wp.blocks.unregisterBlockStyle("core/columns", "section-3");
+  wp.blocks.unregisterBlockStyle("core/column", "section-3");
+});

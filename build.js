@@ -44,6 +44,7 @@ async function buildAll() {
     buildPair({
       entryPoints: [
         'src/js/screen.js',
+        'src/js/editor.js',
         'src/js/animations.js',
       ],
       outdir: 'assets/js',
