@@ -1,6 +1,11 @@
 /*-------------------------------------------------------
 Section "Awards"
 -------------------------------------------------------*/
-.section--awards .awards-list > * {
-	visibility: hidden;
+.section--awards {
+
+	.section__header .wp-block-heading,
+	.block--awards > *,
+	.section__footer .section__text {
+		visibility: hidden;
+	}
 }

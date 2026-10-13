@@ -53,22 +53,22 @@ export function pageArchive() {
 
 	// No results animations
 	noResults && tl.fadeInUp( noResults );
-}
 
-// Animate posts
-function animatePosts( posts ) {
-	gsap.effects.fadeInUpBatch( posts );
-}
+	// Animate posts
+	function animatePosts( posts ) {
+		gsap.effects.fadeInUpBatch( posts );
+	}
 
-// Animate pagination
-function animatePagination( pagination ) {
-	ScrollTrigger.create( {
-		trigger: pagination,
-		start: ScrollTrigger.defaults().start,
-		toggleActions: 'play none none none',
-		onEnter: () => {
-			gsap.effects.fadeInUp( pagination, { yPercent: 80 } );
-		},
-		once: true,
-	} );
+	// Animate pagination
+	function animatePagination( pagination ) {
+		ScrollTrigger.create( {
+			trigger: pagination,
+			start: ScrollTrigger.defaults().start,
+			toggleActions: 'play none none none',
+			onEnter: () => {
+				gsap.effects.fadeInUp( pagination, { yPercent: 80 } );
+			},
+			once: true,
+		} );
+	}
 }

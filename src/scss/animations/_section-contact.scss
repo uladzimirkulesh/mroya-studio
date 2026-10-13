@@ -1,6 +1,25 @@
 /*-------------------------------------------------------
 Section "Contact"
 -------------------------------------------------------*/
-.section--contact .wp-block-cover__image-background {
-	transform: scale(1.05);
+.section--contact {
+
+	.section__content {
+
+		.text--primary,
+		.text--secondary,
+		.wp-block-buttons {
+			visibility: hidden;
+		}
+
+		.text--primary {
+
+			.line {
+				margin-bottom: -0.1em;
+			}
+
+			.word {
+				padding-bottom: 0.1em;
+			}
+		}
+	}
 }

@@ -1,6 +1,15 @@
 /*-------------------------------------------------------
 Section "Mission"
 -------------------------------------------------------*/
-.section--mission .wp-block-cover__image-background {
-	transform: scale(1.05);
+.section--mission {
+
+	.section__header .wp-block-heading.has-span-indent,
+	.list--first,
+	.list--second {
+		visibility: hidden;
+	}
+
+	.wp-block-heading.has-span-indent .text > * > * {
+		opacity: 0.2;
+	}
 }

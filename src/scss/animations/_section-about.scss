@@ -1,6 +1,21 @@
 /*-------------------------------------------------------
 Section "About"
 -------------------------------------------------------*/
-.section--about .section__text > * {
-	opacity: 0.2;
+.section--about {
+
+	.section__header .wp-block-heading,
+	.section__text,
+	.block--skills > .wp-block-heading,
+	.block--skills .skills-list__item {
+		visibility: hidden;
+	}
+
+	.block--skills .skills-list__separator {
+		width: 0;
+	}
+
+	.block--skills > .wp-block-heading,
+	.block--skills .skills-list__item {
+		transform: translate(-3rem);
+	}
 }

@@ -1,6 +1,10 @@
 /*-------------------------------------------------------
 Section "Team"
 -------------------------------------------------------*/
-.section--team .members-list__item {
-	visibility: hidden;
+.section--team {
+
+	.section__header,
+	.team__members > * {
+		visibility: hidden;
+	}
 }

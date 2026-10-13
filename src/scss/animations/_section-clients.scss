@@ -1,6 +1,11 @@
 /*-------------------------------------------------------
 Section "Clients"
 -------------------------------------------------------*/
-.section--clients .clients-list__item {
-	visibility: hidden;
+.section--clients {
+
+	.section__header .wp-block-heading,
+	.clients-list--1 .clients-list__item,
+	.clients-list--2 .clients-list__item {
+		visibility: hidden;
+	}
 }

@@ -75,34 +75,96 @@
 .wp-singular .wp-block-comments {
   visibility: hidden;
 }
-.section--about .section__text > * {
+.section--about .section__header .wp-block-heading,
+.section--about .section__text,
+.section--about .block--skills > .wp-block-heading,
+.section--about .block--skills .skills-list__item {
+  visibility: hidden;
+}
+.section--about .block--skills .skills-list__separator {
+  width: 0;
+}
+.section--about .block--skills > .wp-block-heading,
+.section--about .block--skills .skills-list__item {
+  transform: translate(-3rem);
+}
+.section--awards .section__header .wp-block-heading,
+.section--awards .block--awards > *,
+.section--awards .section__footer .section__text {
+  visibility: hidden;
+}
+.section--clients .section__header .wp-block-heading,
+.section--clients .clients-list--1 .clients-list__item,
+.section--clients .clients-list--2 .clients-list__item {
+  visibility: hidden;
+}
+.section--contact .section__content .text--primary,
+.section--contact .section__content .text--secondary,
+.section--contact .section__content .wp-block-buttons {
+  visibility: hidden;
+}
+.section--contact .section__content .text--primary .line {
+  margin-bottom: -0.1em;
+}
+.section--contact .section__content .text--primary .word {
+  padding-bottom: 0.1em;
+}
+.section--hero .section__block .wp-block-heading,
+.section--hero .section__block p,
+.section--hero .section__footer p,
+.section--hero .section__footer .wp-block-buttons {
+  visibility: hidden;
+}
+.section--hero .section__block .wp-block-heading .line {
+  margin-bottom: -0.1em;
+}
+.section--hero .section__block .wp-block-heading .word {
+  padding-bottom: 0.1em;
+}
+.section--hero-2 .section__block .wp-block-heading,
+.section--hero-2 .section__block p,
+.section--hero-2 .section__footer p {
+  visibility: hidden;
+}
+.section--hero-2 .section__block .wp-block-heading .line {
+  margin-bottom: -0.1em;
+}
+.section--hero-2 .section__block .wp-block-heading .word {
+  padding-bottom: 0.1em;
+}
+.section--keep-reading .section__header,
+.section--keep-reading .wp-block-query .wp-block-post {
+  visibility: hidden;
+}
+.section--mission .section__header .wp-block-heading.has-span-indent,
+.section--mission .list--first,
+.section--mission .list--second {
+  visibility: hidden;
+}
+.section--mission .wp-block-heading.has-span-indent .text > * > * {
   opacity: 0.2;
 }
-.section--awards .awards-list > * {
+.section--services .section__header > *,
+.section--services .item__number,
+.section--services .item__title,
+.section--services .item__description,
+.section--services .item__tags {
   visibility: hidden;
 }
-.section--clients .clients-list__item {
+.section--services .item__title .line {
+  margin-bottom: -0.1em;
+}
+.section--services .item__title .word {
+  padding-bottom: 0.1em;
+}
+.section--services .item__separator {
+  width: 0;
+}
+.section--team .section__header,
+.section--team .team__members > * {
   visibility: hidden;
 }
-.section--contact .wp-block-cover__image-background {
-  transform: scale(1.05);
-}
-.section--keep-reading .wp-block-post {
-  visibility: hidden;
-}
-.section--mission .wp-block-cover__image-background {
-  transform: scale(1.05);
-}
-.section--services .services-list__item {
-  --services-line-scale: 0;
-}
-.section--services .services-list__item::after {
-  transform: scaleY(var(--services-line-scale));
-  transform-origin: top center;
-}
-.section--team .members-list__item {
-  visibility: hidden;
-}
-.section--testimonials .testimonials-list__item {
+.section--testimonials .section__header .wp-block-heading,
+.section--testimonials .testimonials__item {
   visibility: hidden;
 }

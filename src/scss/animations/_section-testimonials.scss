@@ -1,6 +1,10 @@
 /*-------------------------------------------------------
 Section "Testimonials"
 -------------------------------------------------------*/
-.section--testimonials .testimonials-list__item {
-	visibility: hidden;
+.section--testimonials {
+
+	.section__header .wp-block-heading,
+	.testimonials__item {
+		visibility: hidden;
+	}
 }

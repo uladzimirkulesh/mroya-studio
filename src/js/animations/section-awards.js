@@ -5,20 +5,28 @@ export function sectionAwards() {
 	const sections = gsap.utils.toArray( '.section--awards' );
 
 	sections.forEach( ( section ) => {
-		const awardsBlock = section.querySelector( '.awards-list' );
+		const sectionTitle = section.querySelector( '.section__header .wp-block-heading' );
+		const awardsBlock = section.querySelector( '.block--awards' );
 		const awards = awardsBlock?.children;
-
-		if ( ! awards.length ) return;
+		const sectionText = section.querySelector( '.section__footer .section__text' );
 
 		// Let's animate
-		ScrollTrigger.create( {
-			trigger: awardsBlock,
-			start: ScrollTrigger.defaults().start,
-			toggleActions: 'play none none none',
-			onEnter: () => {
-				gsap.effects.fadeInUp( awards );
-			},
-			once: true,
+		const tl = gsap.timeline( {
+			scrollTrigger: {
+				trigger: sectionTitle,
+				start: ScrollTrigger.defaults().start,
+				toggleActions: 'play none none none',
+				once: true,
+			}
 		} );
+
+		// Title animations
+		sectionTitle && tl.fadeInUp( sectionTitle );
+
+		// Skills block animations
+		awards?.length && tl.fadeInUp( awards, '<0.12' );
+
+		// Text animations
+		sectionText && tl.fadeInUp( sectionText, '>-0.58' );
 	} );
 }

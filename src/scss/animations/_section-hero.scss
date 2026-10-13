@@ -1,0 +1,23 @@
+/*-------------------------------------------------------
+Section "Hero"
+-------------------------------------------------------*/
+.section--hero {
+
+	.section__block .wp-block-heading,
+	.section__block p,
+	.section__footer p,
+	.section__footer .wp-block-buttons {
+		visibility: hidden;
+	}
+
+	.section__block .wp-block-heading {
+
+		.line {
+			margin-bottom: -0.1em;
+		}
+
+		.word {
+			padding-bottom: 0.1em;
+		}
+	}
+}

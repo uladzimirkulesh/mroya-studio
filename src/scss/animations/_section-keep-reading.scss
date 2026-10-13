@@ -1,6 +1,10 @@
 /*-------------------------------------------------------
 Section "Keep Reading"
 -------------------------------------------------------*/
-.section--keep-reading .wp-block-post {
-	visibility: hidden;
+.section--keep-reading {
+
+	.section__header,
+	.wp-block-query .wp-block-post {
+		visibility: hidden;
+	}
 }

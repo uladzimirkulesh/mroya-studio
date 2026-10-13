@@ -5,63 +5,79 @@ export function sectionServices() {
 	const sections = gsap.utils.toArray( '.section--services' );
 
 	sections.forEach( ( section ) => {
+		const headerTexts = section.querySelectorAll( '.section__header > *' );
 		const servicesList = section.querySelector( '.services-list' );
-		const items = servicesList?.querySelectorAll( '.services-list__item' );
 
 		// Let's animate
-		servicesList && items.forEach( ( item ) => {
-			animateItem( item );
+		const tl = gsap.timeline( {
+			scrollTrigger: {
+				trigger: section,
+				start: ScrollTrigger.defaults().start,
+				toggleActions: 'play none none none',
+				once: true,
+			}
 		} );
-	} );
-}
 
-// Animate item
-function animateItem( item ) {
-	const separator = item.querySelector( '.wp-block-separator' );
+		// Text animations
+		headerTexts?.length && tl.fadeInUp( headerTexts, { stagger: 0 } );
 
-	if ( ! separator ) { return; }
-
-	// Let's animate
-	const tl = gsap.timeline( {
-		scrollTrigger: {
-			trigger: item,
-			start: ScrollTrigger.defaults().start,
-			toggleActions: 'play none none none',
-			once: true,
-		}
+		// Services list animations
+		servicesList && tl.call( animateServicesList, [ servicesList ], '<' );
 	} );
 
-	// Initial state of the vertical line
-	gsap.set( item, {
-		'--services-line-scale': 0,
-	} );
+	// Animate services list
+	function animateServicesList( servicesList ) {
+		const items = servicesList.querySelectorAll( '.services-list__item' );
 
-	// Horizontal line
-	tl.fromTo(
-		separator,
-		{
+		// Let's animate
+		const tl = gsap.timeline();
+
+		// Items animations
+		items?.length && items.forEach( ( item ) => {
+			tl.call( animateItem, [ item ], '<0.48' );
+		} );
+	}
+
+	// Animate item
+	function animateItem( item ) {
+		const separator = item.querySelector( '.item__separator' );
+		const itemNumber = item.querySelector( '.item__number' );
+		const itemTitle = item.querySelector( '.item__title' );
+		const itemDescription = item.querySelector( '.item__description' );
+		const itemTags = item.querySelector( '.item__tags' );
+
+		// Let's animate
+		const tl = gsap.timeline( {
+			scrollTrigger: {
+				trigger: item,
+				start: ScrollTrigger.defaults().start,
+				toggleActions: 'play none none none',
+				once: true,
+			}
+		} );
+
+		itemTitle && tl.set( itemTitle, { autoAlpha: 1 } );
+		itemDescription && tl.set( itemDescription, { autoAlpha: 1 } );
+
+		// Separators animations
+		separator && tl.fromTo( separator, {
 			width: 0,
-		},
-		{
+		}, {
 			width: '100%',
-			duration: 1.2,
-		}
-	);
-
-	// Vertical line starts at 50%
-	tl.to(
-		item,
-		{
-			'--services-line-scale': 1,
-			duration: 0.9,
-		},
-		'<0.3'
-	);
-
-	return () => {
-		// Cleanup on media query change
-		gsap.set( item, {
-			clearProps: '--services-line-scale',
+			duration: gsap.defaults().duration,
+			stagger: gsap.defaults().stagger,
 		} );
-	};
+
+		// Number animations
+		itemNumber && tl.fadeInUp( itemNumber, '<0.12' );
+
+		// Title animations
+		itemTitle && tl.splitTextLinesMask( itemTitle, '<' );
+
+		// Description animations
+		itemDescription && tl.splitTextLinesMask( itemDescription, '<0.24' );
+
+		// Tags animations
+		itemTags && tl.fadeInUp( itemTags, '>-0.72' );
+	}
 }

@@ -23,17 +23,17 @@ export function pageSingular() {
 
 	// Comments animations
 	comments && tl.call( animateComments, [ comments ], '<0.7' );
-}
 
-// Animate posts
-function animateComments( comments ) {
-	ScrollTrigger.create( {
-		trigger: comments,
-		start: ScrollTrigger.defaults().start,
-		toggleActions: 'play none none none',
-		onEnter: () => {
-			gsap.effects.fadeInUp( comments );
-		},
-		once: true,
-	} );
+	// Animate posts
+	function animateComments( comments ) {
+		ScrollTrigger.create( {
+			trigger: comments,
+			start: ScrollTrigger.defaults().start,
+			toggleActions: 'play none none none',
+			onEnter: () => {
+				gsap.effects.fadeInUp( comments );
+			},
+			once: true,
+		} );
+	}
 }

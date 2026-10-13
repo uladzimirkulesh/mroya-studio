@@ -3,15 +3,26 @@ Section "Services"
 -------------------------------------------------------*/
 .section--services {
 
-	.services-list {
+	.section__header > *,
+	.item__number,
+	.item__title,
+	.item__description,
+	.item__tags {
+		visibility: hidden;
+	}
 
-		&__item {
-			--services-line-scale: 0;
+	.item__title {
 
-			&::after {
-				transform: scaleY( var( --services-line-scale ) );
-				transform-origin: top center;
-			}
+		.line {
+			margin-bottom: -0.1em;
 		}
+
+		.word {
+			padding-bottom: 0.1em;
+		}
+	}
+
+	.item__separator {
+		width: 0;
 	}
 }
