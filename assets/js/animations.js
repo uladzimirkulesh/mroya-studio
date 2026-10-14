@@ -139,6 +139,30 @@ function error404Animations() {
   });
 }
 
+// src/js/animations/gallery.js
+function initGallery() {
+  const galleries = gsap.utils.toArray(".gallery");
+  galleries.forEach((gallery) => {
+    const elements = gallery.querySelectorAll(".wp-block-image img");
+    elements.forEach((el, i) => {
+      gsap.to(
+        el,
+        {
+          autoAlpha: 1,
+          duration: gsap.defaults().duration,
+          delay: i * gsap.defaults().stagger,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: el,
+            start: ScrollTrigger.defaults().start,
+            toggleActions: "play none none none"
+          }
+        }
+      );
+    });
+  });
+}
+
 // src/js/animations/page-archive.js
 function pageArchive() {
   if (!document.body.classList.contains("blog") && !document.body.classList.contains("archive") && !document.body.classList.contains("search")) return;
@@ -213,6 +237,25 @@ function pageSingular() {
       once: true
     });
   }
+}
+
+// src/js/animations/project-description.js
+function projectDescription() {
+  const descriptions = gsap.utils.toArray(".project-description");
+  descriptions.forEach((description) => {
+    const title = description.querySelector(".project-description__header .wp-block-heading");
+    const content = description.querySelectorAll(".project-description__content > *");
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: description,
+        start: ScrollTrigger.defaults().start,
+        toggleActions: "play none none none",
+        once: true
+      }
+    });
+    title && tl.fadeInUp(title);
+    content && tl.fadeInUp(content, "<0.12");
+  });
 }
 
 // src/js/animations/section-about.js
@@ -432,6 +475,20 @@ function sectionContact() {
   });
 }
 
+// src/js/animations/section-cover.js
+function sectionCover() {
+  const sections = gsap.utils.toArray(".section--cover");
+  sections.forEach((section) => {
+    const mediaBlock = section.querySelector(".wp-block-cover");
+    const media = mediaBlock?.querySelectorAll("img, video");
+    mediaBlock && gsap.effects.fadeIn(mediaBlock, { delay: 0.3 });
+    media && gsap.effects.parallax(media, {
+      scaleTo: 1,
+      parent: mediaBlock
+    });
+  });
+}
+
 // src/js/animations/section-hero.js
 function sectionHero() {
   const sections = gsap.utils.toArray(".section--hero");
@@ -595,6 +652,51 @@ function sectionServices() {
   }
 }
 
+// src/js/animations/section-recent-projects.js
+function sectionRecentProjects() {
+  const sections = gsap.utils.toArray(".section--recent-projects");
+  sections.forEach((section) => {
+    const headerTexts = section.querySelectorAll(".section__header .wp-block-heading, .section__header p");
+    const posts = section.querySelectorAll(".wp-block-post-template.is-layout-grid .wp-block-post");
+    const noResults = section.querySelector(".wp-block-query-no-results");
+    const button = section.querySelector(".section__footer .wp-block-buttons");
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: headerTexts,
+        start: ScrollTrigger.defaults().start,
+        toggleActions: "play none none none",
+        once: true
+      }
+    });
+    headerTexts?.length && tl.fadeInUp(headerTexts, { stagger: 0 });
+    posts?.length && tl.call(animatePosts, [posts], "<0.12");
+    noResults && tl.fadeInUp(noResults, "<0.12");
+    button && tl.fadeInUp(button, "<0.42");
+  });
+  function animatePosts(posts) {
+    gsap.effects.fadeInUpBatch(posts);
+  }
+}
+
+// src/js/animations/section-related-projects.js
+function sectionRelatedProjects() {
+  const sections = gsap.utils.toArray(".section--related-projects");
+  sections.forEach((section) => {
+    const sectionHeader = section?.querySelector(".section__header");
+    const projects = section?.querySelectorAll(".wp-block-query .wp-block-post");
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: ScrollTrigger.defaults().start,
+        toggleActions: "play none none none",
+        once: true
+      }
+    });
+    sectionHeader && tl.fadeInUp(sectionHeader);
+    projects?.length && tl.fadeInUp(projects, "<0.12");
+  });
+}
+
 // src/js/animations/section-team.js
 function sectionTeam() {
   const sections = gsap.utils.toArray(".section--team");
@@ -656,17 +758,22 @@ function sectionTestimonials() {
 window.addEventListener("load", () => {
   initMagicCursor();
   error404Animations();
+  initGallery();
   pageArchive();
   pageSingular();
+  projectDescription();
   sectionAbout();
   sectionAwards();
   sectionClients();
   sectionContact();
+  sectionCover();
   sectionHero();
   sectionHero2();
   sectionKeepReading();
   sectionMission();
   sectionServices();
+  sectionRecentProjects();
+  sectionRelatedProjects();
   sectionTeam();
   sectionTestimonials();
 });

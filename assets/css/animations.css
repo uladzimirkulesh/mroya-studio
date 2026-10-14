@@ -2,6 +2,9 @@
 .error404 main > .wp-block-group {
   visibility: hidden;
 }
+.gallery .wp-block-image img {
+  visibility: hidden;
+}
 .magic-cursor {
   position: fixed;
   top: 0;
@@ -72,7 +75,14 @@
 .wp-singular .entry .entry-footer {
   visibility: hidden;
 }
+.wp-singular .entry .wp-block-post-featured-image img {
+  transform: scale(1.05);
+}
 .wp-singular .wp-block-comments {
+  visibility: hidden;
+}
+.project-description__header .wp-block-heading,
+.project-description__content > * {
   visibility: hidden;
 }
 .section--about .section__header .wp-block-heading,
@@ -109,6 +119,14 @@
 .section--contact .section__content .text--primary .word {
   padding-bottom: 0.1em;
 }
+.section--cover .wp-block-cover {
+  visibility: hidden;
+}
+.section--cover .wp-block-cover .wp-block-cover__image-background,
+.section--cover .wp-block-cover .wp-block-cover__video-background {
+  opacity: inherit;
+  transform: scale(1.05);
+}
 .section--hero .section__block .wp-block-heading,
 .section--hero .section__block p,
 .section--hero .section__footer p,
@@ -143,6 +161,16 @@
 }
 .section--mission .wp-block-heading.has-span-indent .text > * > * {
   opacity: 0.2;
+}
+.section--recent-projects .section__header p,
+.section--recent-projects .section__header .wp-block-heading,
+.section--recent-projects .wp-block-query .wp-block-post-template.is-layout-grid .wp-block-post,
+.section--recent-projects .section__footer .wp-block-buttons {
+  visibility: hidden;
+}
+.section--related-projects .section__header,
+.section--related-projects .wp-block-query .wp-block-post {
+  visibility: hidden;
 }
 .section--services .section__header > *,
 .section--services .item__number,

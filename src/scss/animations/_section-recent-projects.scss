@@ -1,0 +1,12 @@
+/*-------------------------------------------------------
+Section "Recent projects"
+-------------------------------------------------------*/
+.section--recent-projects {
+
+	.section__header p,
+	.section__header .wp-block-heading,
+	.wp-block-query .wp-block-post-template.is-layout-grid .wp-block-post,
+	.section__footer .wp-block-buttons {
+		visibility: hidden;
+	}
+}

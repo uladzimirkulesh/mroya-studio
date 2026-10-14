@@ -2,17 +2,22 @@
 Animations
 -------------------------------------------------------*/
 @use "animations/error-404";
+@use "animations/gallery";
 @use "animations/magic-cursor";
 @use "animations/page-archive";
 @use "animations/page-singular";
+@use "animations/project-description";
 @use "animations/section-about";
 @use "animations/section-awards";
 @use "animations/section-clients";
 @use "animations/section-contact";
+@use "animations/section-cover";
 @use "animations/section-hero";
 @use "animations/section-hero-2";
 @use "animations/section-keep-reading";
 @use "animations/section-mission";
+@use "animations/section-recent-projects";
+@use "animations/section-related-projects";
 @use "animations/section-services";
 @use "animations/section-team";
 @use "animations/section-testimonials";

@@ -1,0 +1,15 @@
+/*-------------------------------------------------------
+Section "Cover"
+-------------------------------------------------------*/
+.section--cover {
+
+	.wp-block-cover {
+		visibility: hidden;
+
+		.wp-block-cover__image-background,
+		.wp-block-cover__video-background {
+			opacity: inherit;
+			transform: scale(1.05);
+		}
+	}
+}

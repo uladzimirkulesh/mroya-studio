@@ -1,0 +1,10 @@
+/*-------------------------------------------------------
+Project description
+-------------------------------------------------------*/
+.project-description {
+
+	&__header .wp-block-heading,
+	&__content > * {
+		visibility: hidden;
+	}
+}
