@@ -10,7 +10,7 @@ License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 == Description ==
 
-Mroya Studio is a modern, versatile WordPress block theme designed for web designers, developers and agencies. The theme features are tailored to each audience and a rich library of reusable block patterns, allowing you to craft unique layouts effortlessly. Fully responsive, accessible, and performance-optimized, Mroya empowers you to build stunning, professional websites with ease.
+Mroya Studio is a modern, versatile WordPress block theme designed for web designers, developers and agencies. The theme features are tailored to each audience and a rich library of reusable block patterns, allowing you to craft unique layouts effortlessly. Fully responsive, accessible, and performance-optimized, Mroya Studio empowers you to build stunning, professional websites with ease.
 
 == Installation ==
 
