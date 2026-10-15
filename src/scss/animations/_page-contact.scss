@@ -1,0 +1,22 @@
+/*-------------------------------------------------------
+Page "Contact"
+-------------------------------------------------------*/
+.page--contact {
+
+	.page__header .wp-block-heading,
+	.column--left,
+	.column--right {
+		visibility: hidden;
+	}
+
+	.page__header .wp-block-heading {
+
+		.line {
+			margin-bottom: -0.1em;
+		}
+
+		.word {
+			padding-bottom: 0.1em;
+		}
+	}
+}

@@ -130,6 +130,50 @@ function initMagicCursor() {
   }
 }
 
+// src/js/animations/header.js
+function headerAnimations() {
+  const header = document.querySelector(".header--default");
+  if (!header) return;
+  gsap.effects.fadeInDown(header, {
+    yPercent: -30,
+    delay: 0.3
+  });
+  const headerHeight = header.offsetHeight / 2;
+  const contrastSections = gsap.utils.toArray(".is-style-section-1");
+  const largeImages = gsap.utils.toArray(".wp-block-image.alignwide, .wp-block-image.alignfull, .wp-singular .entry-header .wp-block-post-featured-image, .section--cover");
+  contrastSections.forEach((section) => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: `top top+=${headerHeight}`,
+      end: `bottom top+=${headerHeight}`,
+      toggleClass: {
+        targets: header,
+        className: "has-contrast-links"
+      }
+    });
+  });
+  largeImages.forEach((img) => {
+    ScrollTrigger.create({
+      trigger: img,
+      start: `top top+=${headerHeight}`,
+      end: `bottom top+=${headerHeight}`,
+      toggleClass: {
+        targets: header,
+        className: "has-white-links"
+      }
+    });
+  });
+}
+
+// src/js/animations/footer.js
+function footerAnimations() {
+  const footer = document.querySelector(".footer--default");
+  footer && gsap.effects.fadeInUp(footer, {
+    yPercent: 30,
+    delay: 0.3
+  });
+}
+
 // src/js/animations/error-404.js
 function error404Animations() {
   if (!document.body.classList.contains("error404")) return;
@@ -212,6 +256,20 @@ function pageArchive() {
   }
 }
 
+// src/js/animations/page-contact.js
+function pageContact() {
+  const pages = gsap.utils.toArray(".page--contact");
+  pages.forEach((page) => {
+    const pageHeader = page.querySelector(".page__header");
+    const pageHeaderTitle = pageHeader?.querySelector(".wp-block-heading");
+    const columns = page.querySelectorAll(".column--left, .column--right");
+    const tl = gsap.timeline({ delay: 0.3 });
+    pageHeaderTitle && tl.set(pageHeaderTitle, { autoAlpha: 1 });
+    pageHeaderTitle && tl.splitTextLinesMask(pageHeaderTitle);
+    columns?.length && tl.fadeInUp(columns, "<0.42");
+  });
+}
+
 // src/js/animations/page-singular.js
 function pageSingular() {
   if (!document.body.classList.contains("wp-singular")) return;
@@ -256,6 +314,17 @@ function projectDescription() {
     title && tl.fadeInUp(title);
     content && tl.fadeInUp(content, "<0.12");
   });
+}
+
+// src/js/animations/scramble-links.js
+function scrambleLinks() {
+  const links = gsap.utils.toArray(".wp-block-post-terms a, .wp-block-post-date a, .wp-block-button.is-style-down a, .wp-block-button.is-style-more-3 a, .wp-block-comment-date a, .wp-block-comment-edit-link a");
+  const scramble = (event) => {
+    gsap.effects.scrambleText(event.target);
+  };
+  for (const link of links) {
+    link.addEventListener("pointerenter", scramble);
+  }
 }
 
 // src/js/animations/section-about.js
@@ -757,11 +826,15 @@ function sectionTestimonials() {
 // src/js/animations.js
 window.addEventListener("load", () => {
   initMagicCursor();
+  headerAnimations();
+  footerAnimations();
   error404Animations();
   initGallery();
   pageArchive();
+  pageContact();
   pageSingular();
   projectDescription();
+  scrambleLinks();
   sectionAbout();
   sectionAwards();
   sectionClients();

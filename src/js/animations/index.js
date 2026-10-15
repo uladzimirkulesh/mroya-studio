@@ -1,9 +1,13 @@
 export { initMagicCursor } from './magic-cursor';
+export { headerAnimations } from './header';
+export { footerAnimations } from './footer';
 export { error404Animations } from './error-404';
 export { initGallery } from './gallery';
 export { pageArchive } from './page-archive';
+export { pageContact } from './page-contact';
 export { pageSingular } from './page-singular';
 export { projectDescription } from './project-description';
+export { scrambleLinks } from './scramble-links';
 export { sectionAbout } from './section-about';
 export { sectionAwards } from './section-awards';
 export { sectionClients } from './section-clients';

@@ -1,10 +1,4 @@
 /* src/scss/animations.scss */
-.error404 main > .wp-block-group {
-  visibility: hidden;
-}
-.gallery .wp-block-image img {
-  visibility: hidden;
-}
 .magic-cursor {
   position: fixed;
   top: 0;
@@ -46,6 +40,18 @@
 .magic-cursor__label {
   display: block;
 }
+.header--default {
+  visibility: hidden;
+}
+.footer--default {
+  visibility: hidden;
+}
+.error404 main > .wp-block-group {
+  visibility: hidden;
+}
+.gallery .wp-block-image img {
+  visibility: hidden;
+}
 .page-header__title,
 .page-header__description,
 .page-header__search {
@@ -66,6 +72,17 @@
   margin-bottom: -0.1em;
 }
 .page-header__title .word {
+  padding-bottom: 0.1em;
+}
+.page--contact .page__header .wp-block-heading,
+.page--contact .column--left,
+.page--contact .column--right {
+  visibility: hidden;
+}
+.page--contact .page__header .wp-block-heading .line {
+  margin-bottom: -0.1em;
+}
+.page--contact .page__header .wp-block-heading .word {
   padding-bottom: 0.1em;
 }
 .wp-singular .entry .wp-block-post-title,

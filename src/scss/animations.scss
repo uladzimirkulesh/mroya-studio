@@ -1,10 +1,13 @@
 /*-------------------------------------------------------
 Animations
 -------------------------------------------------------*/
+@use "animations/magic-cursor";
+@use "animations/header";
+@use "animations/footer";
 @use "animations/error-404";
 @use "animations/gallery";
-@use "animations/magic-cursor";
 @use "animations/page-archive";
+@use "animations/page-contact";
 @use "animations/page-singular";
 @use "animations/project-description";
 @use "animations/section-about";

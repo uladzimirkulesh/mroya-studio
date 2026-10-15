@@ -6,11 +6,15 @@ Fire on window load
 window.addEventListener( 'load', () => {
 	// Init Animations
 	Animate.initMagicCursor();
+	Animate.headerAnimations();
+	Animate.footerAnimations();
 	Animate.error404Animations();
 	Animate.initGallery();
 	Animate.pageArchive();
+	Animate.pageContact();
 	Animate.pageSingular();
 	Animate.projectDescription();
+	Animate.scrambleLinks();
 	Animate.sectionAbout();
 	Animate.sectionAwards();
 	Animate.sectionClients();
