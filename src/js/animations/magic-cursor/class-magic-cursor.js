@@ -78,7 +78,7 @@ export class MagicCursor {
 	}
 
 	thumbnail( from = 0.1, to = 1 ) {
-		this.setLabel( wp.i18n.__( '[ Open ]', 'mroya' ) );
+		this.setLabel( wp.i18n.__( '[ Open ]', 'mroya-studio' ) );
 
 		gsap.fromTo( this.root, {
 			scale: from,
