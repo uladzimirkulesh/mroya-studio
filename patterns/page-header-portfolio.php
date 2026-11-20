@@ -15,7 +15,7 @@
 ?>
 <!-- wp:group {"align":"wide","className":"page-header--portfolio","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide page-header--portfolio">
-	<!-- wp:heading {"level":1,"align":"wide","className":"is-style-text-giant page-header__title","style":{"css":"left: -0.35vw;"}} -->
+	<!-- wp:heading {"level":1,"align":"wide","className":"is-style-text-giant page-header__title","style":{"css":"position: relative; left: -0.35vw;"}} -->
 	<h1 class="wp-block-heading alignwide is-style-text-giant page-header__title has-custom-css"><?php echo wp_kses_post( _x( 'Digital<br>Aesthetics', 'Portfolio page header title', 'mroya-studio' ) ); ?></h1>
 	<!-- /wp:heading -->
 

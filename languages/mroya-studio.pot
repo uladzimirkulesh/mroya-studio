@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mroya Studio\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-08 19:44+0000\n"
+"POT-Creation-Date: 2026-11-20 18:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Uladzimir Kulesh <hello@mroya.eu>\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.8.9; wp-7.1.4; php-8.5.12\n"
+"X-Loco-Version: 2.8.10; wp-7.1.5; php-8.5.12\n"
 "X-Domain: mroya-studio"
 
 #. 1: plugin name.
@@ -29,7 +29,7 @@ msgstr ""
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: functions.php:127
+#: functions.php:114
 msgid "A collection of portfolio patterns."
 msgstr ""
 
@@ -1169,7 +1169,7 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:126 patterns/header.php:29 patterns/header-fixed.php:29
+#: functions.php:113 patterns/header.php:29 patterns/header-fixed.php:29
 msgid "Portfolio"
 msgstr ""
 

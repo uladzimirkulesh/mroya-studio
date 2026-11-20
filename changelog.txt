@@ -1,5 +1,6 @@
 1.1.0: Nov 20, 2026
 - IMPROVEMENT: Code readability.
+- FIX: Patterns.
 - FIX: Viewports in mixins.scss.
 - IMPROVEMENT: Header.
 - IMPROVEMENT: theme.json.
