@@ -15,7 +15,7 @@ export function pageContact() {
 		pageHeaderTitle && tl.set( pageHeaderTitle, { autoAlpha: 1 } );
 
 		// Page header animations
-		pageHeaderTitle && tl.splitTextLinesMask( pageHeaderTitle );
+		pageHeaderTitle && tl.revealTextLinesMask( pageHeaderTitle );
 
 		// Columns animations
 		columns?.length && tl.fadeInUp( columns, '<0.42' );

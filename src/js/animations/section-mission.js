@@ -12,7 +12,7 @@ export function sectionMission() {
 		const list2 = section.querySelector( '.section__content .list--second' );
 
 		// Let's animate
-		headingText && gsap.effects.splitTextChars( headingText );
+		headingText && gsap.effects.revealTextChars( headingText );
 
 		const tl = gsap.timeline( {
 			scrollTrigger: {

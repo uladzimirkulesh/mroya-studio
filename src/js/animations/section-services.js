@@ -72,10 +72,10 @@ export function sectionServices() {
 		itemNumber && tl.fadeInUp( itemNumber, '<0.12' );
 
 		// Title animations
-		itemTitle && tl.splitTextLinesMask( itemTitle, '<' );
+		itemTitle && tl.revealTextLinesMask( itemTitle, '<' );
 
 		// Description animations
-		itemDescription && tl.splitTextLinesMask( itemDescription, '<0.24' );
+		itemDescription && tl.revealTextLinesMask( itemDescription, '<0.24' );
 
 		// Tags animations
 		itemTags && tl.fadeInUp( itemTags, '>-0.72' );

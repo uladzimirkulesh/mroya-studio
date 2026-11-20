@@ -23,8 +23,8 @@ export function sectionContact() {
 		textSecondary && tl.set( textSecondary, { autoAlpha: 1 } );
 
 		// Text animations
-		textPrimary && tl.splitTextLinesMask( textPrimary );
-		textSecondary && tl.splitTextLinesMask( textSecondary, '<0.42' );
+		textPrimary && tl.revealTextLinesMask( textPrimary );
+		textSecondary && tl.revealTextLinesMask( textSecondary, '<0.42' );
 		button && tl.fadeInUp( button, '<0.12' );
 	} );
 }

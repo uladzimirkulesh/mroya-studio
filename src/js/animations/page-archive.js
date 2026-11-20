@@ -26,8 +26,8 @@ export function pageArchive() {
 	tl.addLabel( 'start' );
 
 	// Page header animations
-	pageHeaderTitle && tl.splitTextLinesMask( pageHeaderTitle );
-	pageHeaderDescription && tl.splitTextLinesMask( pageHeaderDescription, '<0.42' );
+	pageHeaderTitle && tl.revealTextLinesMask( pageHeaderTitle );
+	pageHeaderDescription && tl.revealTextLinesMask( pageHeaderDescription, '<0.42' );
 	pageHeaderSearch && tl.fadeInUp( pageHeaderSearch, '<0.42' );
 
 	// Posts animations

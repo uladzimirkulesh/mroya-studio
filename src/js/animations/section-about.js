@@ -10,7 +10,7 @@ export function sectionAbout() {
 		const skillsBlock = section.querySelector( '.block--skills' );
 
 		// Let's animate
-		sectionText && gsap.effects.splitTextWords( sectionText );
+		sectionText && gsap.effects.revealTextWords( sectionText );
 
 		const tl = gsap.timeline( {
 			scrollTrigger: {

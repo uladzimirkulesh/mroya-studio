@@ -16,8 +16,8 @@ export function sectionHero() {
 		blockText && tl.set( blockText, { autoAlpha: 1 } );
 
 		// Text animations
-		blockTitle && tl.splitTextLinesMask( blockTitle );
-		blockText && tl.splitTextLinesMask( blockText, '<0.42' );
+		blockTitle && tl.revealTextLinesMask( blockTitle );
+		blockText && tl.revealTextLinesMask( blockText, '<0.42' );
 		footerElements && tl.fadeInUp( footerElements, { stagger: 0 }, '<0.12' );
 	} );
 }

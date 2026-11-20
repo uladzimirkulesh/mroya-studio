@@ -221,8 +221,8 @@ function pageArchive() {
   pageHeaderTitle && tl.set(pageHeaderTitle, { autoAlpha: 1 });
   pageHeaderDescription && tl.set(pageHeaderDescription, { autoAlpha: 1 });
   tl.addLabel("start");
-  pageHeaderTitle && tl.splitTextLinesMask(pageHeaderTitle);
-  pageHeaderDescription && tl.splitTextLinesMask(pageHeaderDescription, "<0.42");
+  pageHeaderTitle && tl.revealTextLinesMask(pageHeaderTitle);
+  pageHeaderDescription && tl.revealTextLinesMask(pageHeaderDescription, "<0.42");
   pageHeaderSearch && tl.fadeInUp(pageHeaderSearch, "<0.42");
   if (posts?.length) {
     tl.call(() => {
@@ -265,7 +265,7 @@ function pageContact() {
     const columns = page.querySelectorAll(".column--left, .column--right");
     const tl = gsap.timeline({ delay: 0.3 });
     pageHeaderTitle && tl.set(pageHeaderTitle, { autoAlpha: 1 });
-    pageHeaderTitle && tl.splitTextLinesMask(pageHeaderTitle);
+    pageHeaderTitle && tl.revealTextLinesMask(pageHeaderTitle);
     columns?.length && tl.fadeInUp(columns, "<0.42");
   });
 }
@@ -334,7 +334,7 @@ function sectionAbout() {
     const sectionTitle = section.querySelector(".section__header .wp-block-heading");
     const sectionText = section.querySelector(".section__text");
     const skillsBlock = section.querySelector(".block--skills");
-    sectionText && gsap.effects.splitTextWords(sectionText);
+    sectionText && gsap.effects.revealTextWords(sectionText);
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionTitle,
@@ -538,8 +538,8 @@ function sectionContact() {
     });
     textPrimary && tl.set(textPrimary, { autoAlpha: 1 });
     textSecondary && tl.set(textSecondary, { autoAlpha: 1 });
-    textPrimary && tl.splitTextLinesMask(textPrimary);
-    textSecondary && tl.splitTextLinesMask(textSecondary, "<0.42");
+    textPrimary && tl.revealTextLinesMask(textPrimary);
+    textSecondary && tl.revealTextLinesMask(textSecondary, "<0.42");
     button && tl.fadeInUp(button, "<0.12");
   });
 }
@@ -568,8 +568,8 @@ function sectionHero() {
     const tl = gsap.timeline({ delay: 0.3 });
     blockTitle && tl.set(blockTitle, { autoAlpha: 1 });
     blockText && tl.set(blockText, { autoAlpha: 1 });
-    blockTitle && tl.splitTextLinesMask(blockTitle);
-    blockText && tl.splitTextLinesMask(blockText, "<0.42");
+    blockTitle && tl.revealTextLinesMask(blockTitle);
+    blockText && tl.revealTextLinesMask(blockText, "<0.42");
     footerElements && tl.fadeInUp(footerElements, { stagger: 0 }, "<0.12");
   });
 }
@@ -584,8 +584,8 @@ function sectionHero2() {
     const tl = gsap.timeline({ delay: 0.3 });
     blockTitle && tl.set(blockTitle, { autoAlpha: 1 });
     blockText && tl.set(blockText, { autoAlpha: 1 });
-    blockTitle && tl.splitTextLinesMask(blockTitle);
-    blockText && tl.splitTextLinesMask(blockText, "<0.42");
+    blockTitle && tl.revealTextLinesMask(blockTitle);
+    blockText && tl.revealTextLinesMask(blockText, "<0.42");
     footerElements && tl.fadeInUp(footerElements, { stagger: 0 }, "<0.12");
   });
 }
@@ -633,7 +633,7 @@ function sectionMission() {
     const headingText = heading?.querySelector(".text");
     const list1 = section.querySelector(".section__content .list--first");
     const list2 = section.querySelector(".section__content .list--second");
-    headingText && gsap.effects.splitTextChars(headingText);
+    headingText && gsap.effects.revealTextChars(headingText);
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: heading,
@@ -715,8 +715,8 @@ function sectionServices() {
       stagger: gsap.defaults().stagger
     });
     itemNumber && tl.fadeInUp(itemNumber, "<0.12");
-    itemTitle && tl.splitTextLinesMask(itemTitle, "<");
-    itemDescription && tl.splitTextLinesMask(itemDescription, "<0.24");
+    itemTitle && tl.revealTextLinesMask(itemTitle, "<");
+    itemDescription && tl.revealTextLinesMask(itemDescription, "<0.24");
     itemTags && tl.fadeInUp(itemTags, ">-0.72");
   }
 }

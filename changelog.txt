@@ -3,6 +3,7 @@
 - FIX: Viewports in mixins.scss.
 - IMPROVEMENT: Header.
 - IMPROVEMENT: theme.json.
+- UPDATE: Animations.
 
 1.0.0: Nov 08, 2026
 - NEW: First release.
