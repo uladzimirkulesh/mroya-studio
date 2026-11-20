@@ -24,7 +24,7 @@
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:navigation {"overlay":"navigation-overlay","overlayBackgroundColor":"contrast","overlayTextColor":"base","style":{"layout":{"selfStretch":"fixed","flexSize":"50%"},"css":"line-height: 3rem;"},"layout":{"type":"flex","justifyContent":"right","flexWrap":"nowrap"}} -->
+		<!-- wp:navigation {"overlay":"navigation-overlay","overlayBackgroundColor":"contrast","overlayTextColor":"base","style":{"layout":{"selfStretch":"fixed","flexSize":"50%"},"css":"& { width: 100%; } & .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content { line-height: 3rem; }"},"layout":{"type":"flex","justifyContent":"right","flexWrap":"nowrap"}} -->
 			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Home', 'mroya-studio' ); ?>","url":"#"} /-->
 			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Portfolio', 'mroya-studio' ); ?>","url":"#"} /-->
 			<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Journal', 'mroya-studio' ); ?>","url":"#"} /-->

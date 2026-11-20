@@ -1,5 +1,5 @@
 {
-	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"$schema": "https://schemas.wp.org/wp/7.1/theme.json",
 	"version": 3,
 	"settings": {
 		"custom": {
@@ -103,7 +103,7 @@
 				},
 				{
 					"name": "X-Large",
-					"size": "clamp(3.75rem, 2.8125vi + 3.1875rem, 6rem)",
+					"size": "clamp(3.75rem, 2.8125vw + 3.1875rem, 6rem)",
 					"slug": "40"
 				},
 				{
@@ -190,10 +190,7 @@
 					"slug": "normal"
 				},
 				{
-					"fluid": {
-						"min": "1.125rem",
-						"max": "1.125rem"
-					},
+					"fluid": false,
 					"name": "Medium",
 					"size": "1.125rem",
 					"slug": "medium"
@@ -259,9 +256,7 @@
 		"spacing": {
 			"padding": {
 				"right": "clamp(1.125rem, 2.5vw, 2rem)",
-				"left": "clamp(1.125rem, 2.5vw, 2rem)",
-				"top": "clamp(1.25rem, 0.625vw + 1.125rem, 1.875rem)",
-				"bottom": "clamp(1.25rem, 0.625vw + 1.125rem, 1.875rem)"
+				"left": "clamp(1.125rem, 2.5vw, 2rem)"
 			}
 		},
 		"blocks": {
@@ -288,13 +283,9 @@
 				},
 				"elements": {
 					"link": {
-						"color": {
-							"text": "currentColor"
-						},
 						"typography": {
 							"textDecoration": "none"
-						},
-						"css": "& { display: inline-block; }"
+						}
 					}
 				}
 			},
@@ -304,18 +295,10 @@
 				},
 				"typography": {
 					"fontFamily": "var:preset|font-family|font-monospace",
-					"fontSize": "var:preset|font-size|xx-small",
 					"fontWeight": "400",
-					"lineHeight": "var:custom|typography|line-height|xx-small",
-					"letterSpacing": "var:custom|typography|letter-spacing|xx-small",
 					"textTransform": "uppercase"
 				},
 				"css": "& > * { display: inline-block; } &.taxonomy-post_tag a::before { content: '#'; } &.taxonomy-uk-project_tag a::before { content: '#'; }"
-			},
-			"core/term-description": {
-				"color": {
-					"text": "var:preset|color|contrast"
-				}
 			},
 			"core/comment-date": {
 				"typography": {
@@ -328,16 +311,8 @@
 				},
 				"elements": {
 					"link": {
-						"color": {
-							"text": "currentColor"
-						},
 						"typography": {
 							"textDecoration": "none"
-						},
-						":focus": {
-							"typography": {
-								"textDecoration": "underline dotted"
-							}
 						}
 					}
 				}
@@ -353,16 +328,8 @@
 				},
 				"elements": {
 					"link": {
-						"color": {
-							"text": "currentColor"
-						},
 						"typography": {
 							"textDecoration": "none"
-						},
-						":focus": {
-							"typography": {
-								"textDecoration": "underline dotted"
-							}
 						}
 					}
 				}

@@ -6,10 +6,10 @@ Author: Uladzimir Kulesh
 Author URI: https://mroya.eu/
 Description: Mroya Studio is a modern, versatile WordPress block theme designed for web designers, developers and agencies. The theme features are tailored to each audience and a rich library of reusable block patterns, allowing you to craft unique layouts effortlessly. Fully responsive, accessible, and performance-optimized, Mroya Studio empowers you to build stunning, professional websites with ease.
 Template: mroya
-Requires at least: 6.7
+Requires at least: 7.1
 Tested up to: 7.1
 Requires PHP: 7.2
-Version: 1.0.0
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: mroya-studio
@@ -23,25 +23,15 @@ textarea {
 select {
   height: 2.75rem;
 }
-@media only screen and (max-width: 959px) {
+@media only screen and (max-width: 1199px) {
   .header--default > .wp-block-group.is-layout-grid {
-    grid-template-columns: repeat(2, minmax(0, auto));
+    grid-template-columns: 1fr auto;
   }
-}
-.header--default .wp-block-navigation.items-justified-right {
-  --navigation-layout-justification-setting: center;
-  --navigation-layout-justify: center;
-}
-.header--default .wp-block-navigation .wp-block-navigation__container {
-  flex-grow: 1;
 }
 @media only screen and (min-width: 960px) {
   .header--default .wp-block-navigation .wp-block-navigation__container > .wp-block-navigation-item:nth-last-child(1 of .wp-block-navigation-item) {
     margin-left: auto;
   }
-}
-.header--default .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
-  line-height: var(--wp--custom--typography--line-height--small, inherit);
 }
 .header--default.has-contrast-links {
   color: var(--wp--preset--color--base);
@@ -230,18 +220,18 @@ body.admin-bar .header--fixed {
 .wp-block-query .is-layout-projects-grid--2 .wp-block-post > .wp-block-group {
   row-gap: 0.25rem;
 }
-@media only screen and (max-width: 782px) {
+@media only screen and (max-width: 781px) {
   .wp-block-query .is-layout-projects-grid--3 {
     grid-template-columns: 1fr;
   }
 }
-@media only screen and (min-width: 783px) {
+@media only screen and (min-width: 782px) {
   .wp-block-query .is-layout-projects-grid--3 .wp-block-post:nth-child(4n-3),
   .wp-block-query .is-layout-projects-grid--3 .wp-block-post:nth-child(4n) {
     grid-column: span 3;
   }
 }
-@media only screen and (min-width: 783px) {
+@media only screen and (min-width: 782px) {
   .wp-block-query .is-layout-projects-grid--3 .wp-block-post:nth-child(4n-2),
   .wp-block-query .is-layout-projects-grid--3 .wp-block-post:nth-child(4n-1) {
     grid-column: span 2;
@@ -316,7 +306,7 @@ body.admin-bar .header--fixed {
   background-color: var(--wp--custom--color--card--background, var(--wp--preset--color--base));
   border-radius: var(--wp--custom--border--radius--normal);
 }
-@media only screen and (max-width: 782px) {
+@media only screen and (max-width: 781px) {
   .gallery {
     grid-template-columns: 1fr;
   }
@@ -324,7 +314,7 @@ body.admin-bar .header--fixed {
 .gallery .wp-block-image {
   overflow: clip;
 }
-@media only screen and (max-width: 782px) {
+@media only screen and (max-width: 781px) {
   .gallery .wp-block-image {
     grid-column: span 1;
     grid-row: span 1;
@@ -333,7 +323,7 @@ body.admin-bar .header--fixed {
 .gallery .wp-block-image img {
   width: 100%;
 }
-@media only screen and (min-width: 783px) {
+@media only screen and (min-width: 782px) {
   .gallery--3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -408,7 +398,7 @@ body.admin-bar .header--fixed {
     min-width: 50vw;
   }
 }
-@media only screen and (min-width: 783px) {
+@media only screen and (min-width: 782px) {
   .section--clients .clients-list__item {
     min-width: 40vw;
   }
@@ -637,7 +627,7 @@ body:not(.editor-styles-wrapper) .section--clients .clients-list__item .wp-block
   grid-template-columns: repeat(2, minmax(0, 1fr));
   row-gap: var(--wp--preset--spacing--30);
 }
-@media only screen and (min-width: 783px) {
+@media only screen and (min-width: 782px) {
   .section--mission .section__content {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -652,7 +642,7 @@ body:not(.editor-styles-wrapper) .section--clients .clients-list__item .wp-block
     grid-column: span 2;
   }
 }
-@media only screen and (min-width: 783px) {
+@media only screen and (min-width: 782px) {
   .section--mission .list--first {
     grid-column: 2;
   }
@@ -668,7 +658,7 @@ body:not(.editor-styles-wrapper) .section--clients .clients-list__item .wp-block
     grid-row: 2;
   }
 }
-@media only screen and (min-width: 783px) {
+@media only screen and (min-width: 782px) {
   .section--mission .list--second {
     grid-column: 3;
   }
@@ -687,12 +677,12 @@ body:not(.editor-styles-wrapper) .section--clients .clients-list__item .wp-block
 .section--recent-projects .wp-block-query .wp-block-post-template.is-layout-grid {
   row-gap: var(--wp--preset--spacing--20);
 }
-@media only screen and (max-width: 782px) {
+@media only screen and (max-width: 781px) {
   .section--recent-projects .wp-block-query .wp-block-post-template.is-layout-grid {
     grid-template-columns: 1fr;
   }
 }
-@media only screen and (min-width: 783px) {
+@media only screen and (min-width: 782px) {
   .section--recent-projects .wp-block-query .wp-block-post-template.is-layout-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -702,7 +692,7 @@ body:not(.editor-styles-wrapper) .section--clients .clients-list__item .wp-block
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
-@media only screen and (min-width: 783px) {
+@media only screen and (min-width: 782px) {
   .section--recent-projects .wp-block-query .wp-block-post-template.is-layout-grid .wp-block-post:nth-child(1) {
     grid-column: span 2;
   }
@@ -710,7 +700,7 @@ body:not(.editor-styles-wrapper) .section--clients .clients-list__item .wp-block
 .section--recent-projects .section__footer .wp-block-buttons {
   grid-column: span 2;
 }
-@media only screen and (min-width: 783px) {
+@media only screen and (min-width: 782px) {
   .section--recent-projects .section__footer .wp-block-buttons {
     grid-column: 2;
   }
@@ -738,7 +728,7 @@ body:not(.editor-styles-wrapper) .section--clients .clients-list__item .wp-block
 .section--services .section__header {
   row-gap: 0.25rem;
 }
-@media only screen and (max-width: 782px) {
+@media only screen and (max-width: 781px) {
   .section--services .services-list__item > * {
     grid-column: span 2;
   }

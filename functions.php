@@ -1,6 +1,6 @@
 <?php
 /**
- * Mroya Studio functions and definitions
+ * Mroya Studio functions and definitions.
  *
  * When using a child theme (see http://codex.wordpress.org/Theme_Development
  * and http://codex.wordpress.org/Child_Themes), you can override certain
@@ -14,17 +14,16 @@
  */
 
 /**
- * Enqueue styles and scripts
+ * Enqueue styles and scripts.
  *
  * @since Mroya Studio 1.0.0
- *
  * @return void
  */
 function mroya_studio_assets() {
 	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	$version = wp_get_theme()->get( 'Version' );
 
-	// Studio theme stylesheet
+	// Studio theme stylesheet.
 	wp_enqueue_style(
 		'mroya-studio-style',
 		get_stylesheet_directory_uri() . '/style' . $suffix . '.css',
@@ -37,7 +36,7 @@ function mroya_studio_assets() {
 		get_stylesheet_directory() . '/style' . $suffix . '.css'
 	);
 
-	// Studio theme scripts
+	// Studio theme scripts.
 	wp_enqueue_script(
 		'mroya-studio-screen',
 		get_stylesheet_directory_uri() . '/assets/js/screen' . $suffix . '.js',
@@ -45,18 +44,13 @@ function mroya_studio_assets() {
 		$version,
 		true
 	);
-	wp_script_add_data(
-		'mroya-studio-screen',
-		'path',
-		get_stylesheet_directory() . '/assets/js/screen' . $suffix . '.js',
-	);
 
 	/**
 	 * Enqueue styles and scripts only if the Mroya Premium
-	 * plugin is installed and activated
+	 * plugin is installed and activated.
 	 */
 	if ( wp_script_is( 'mroya-premium-screen', 'registered' ) ) {
-		// Animations stylesheet
+		// Animations stylesheet.
 		wp_enqueue_style(
 			'mroya-studio-animations',
 			get_stylesheet_directory_uri() . '/assets/css/animations' . $suffix . '.css',
@@ -72,7 +66,7 @@ function mroya_studio_assets() {
 			get_stylesheet_directory() . '/assets/css/animations' . $suffix . '.css'
 		);
 
-		// Animations scripts
+		// Animations scripts.
 		wp_enqueue_script(
 			'mroya-studio-animations',
 			get_stylesheet_directory_uri() . '/assets/js/animations' . $suffix . '.js',
@@ -83,26 +77,20 @@ function mroya_studio_assets() {
 			$version,
 			true
 		);
-		wp_script_add_data(
-			'mroya-studio-animations',
-			'path',
-			get_stylesheet_directory() . '/assets/js/animations' . $suffix . '.js'
-		);
 	}
 }
 add_action( 'wp_enqueue_scripts', 'mroya_studio_assets' );
 
 /**
- * Enqueues editor styles
+ * Enqueues editor styles.
  *
  * @since Mroya Studio 1.0.0
- *
  * @return void
  */
 function mroya_studio_editor_style() {
 	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-	// Editor styles
+	// Editor styles.
 	$editor_styles = array(
 		get_parent_theme_file_uri( 'style' . $suffix . '.css' ),
 		get_stylesheet_directory_uri() . '/style' . $suffix . '.css',
@@ -113,10 +101,9 @@ function mroya_studio_editor_style() {
 add_action( 'after_setup_theme', 'mroya_studio_editor_style' );
 
 /**
- * Registers block pattern categories
+ * Registers block pattern categories.
  *
  * @since Mroya Studio 1.0.0
- *
  * @return void
  */
 function mroya_studio_register_block_pattern_categories() {
@@ -131,25 +118,23 @@ function mroya_studio_register_block_pattern_categories() {
 add_action( 'init', 'mroya_studio_register_block_pattern_categories', 9 );
 
 /**
- * Unregisters block patterns
+ * Unregisters block patterns.
  *
  * @since Mroya Studio 1.0.0
- *
  * @return void
  */
 function mroya_studio_unregister_block_patterns() {
-	unregister_block_pattern( 'mroya/section-hero-3' );
 	unregister_block_pattern( 'mroya/section-contacts' );
 	unregister_block_pattern( 'mroya/section-faq' );
 	unregister_block_pattern( 'mroya/section-features' );
+	unregister_block_pattern( 'mroya/section-hero-3' );
 }
 add_action( 'init', 'mroya_studio_unregister_block_patterns', 999 );
 
 /**
- * Filtering the query to display related projects
+ * Filtering the query to display related projects.
  *
  * @since Mroya Studio 1.0.0
- *
  * @return $query
  */
 function mroya_studio_related_projects( $query, \WP_Block $block ) {
@@ -181,7 +166,7 @@ add_filter( 'query_loop_block_query_vars', 'mroya_studio_related_projects', 10, 
 /**
  * Adds magic cursor HTML in the top of the body tag
  * only if the Mroya Premium plugin is installed
- * and activated
+ * and activated.
  *
  * @since Mroya Studio 1.0.0
  * @return void

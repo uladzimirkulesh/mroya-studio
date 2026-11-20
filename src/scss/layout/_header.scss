@@ -7,20 +7,14 @@ Header
 
 	> .wp-block-group.is-layout-grid {
 
-		@include mixins.media("break-large", max) {
-			grid-template-columns: repeat(2, minmax(0, auto));
+		@include mixins.media("break-wide", max) {
+			grid-template-columns: 1fr auto;
 		}
 	}
 
 	.wp-block-navigation {
 
-		&.items-justified-right {
-			--navigation-layout-justification-setting: center;
-			--navigation-layout-justify: center;
-		}
-
 		.wp-block-navigation__container {
-			flex-grow: 1;
 
 			> .wp-block-navigation-item {
 
@@ -30,13 +24,6 @@ Header
 						margin-left: auto;
 					}
 				}
-			}
-		}
-
-		&__submenu-container {
-
-			.wp-block-navigation-item__content {
-				line-height: var(--wp--custom--typography--line-height--small, inherit);
 			}
 		}
 	}
