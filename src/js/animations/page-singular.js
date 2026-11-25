@@ -4,7 +4,7 @@ Singular page animations
 export function pageSingular() {
 	if ( ! document.body.classList.contains( 'wp-singular' ) ) return;
 
-	const entry = document.querySelector( '#entry' );
+	const entry = document.querySelector( '.entry' );
 	const entryElements = entry?.querySelectorAll( '.wp-block-post-title, .entry-meta, .wp-block-post-featured-image, .entry-content, .entry-footer' );
 	const featuredImg = entry?.querySelector( '.wp-block-post-featured-image' );
 	const img = featuredImg?.querySelector( 'img' );
